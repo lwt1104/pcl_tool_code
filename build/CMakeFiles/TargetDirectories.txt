@@ -1,3 +1,4 @@
 /home/lwt1104/correspondence_grouping/build/CMakeFiles/correspondence_grouping.dir
 /home/lwt1104/correspondence_grouping/build/CMakeFiles/pcd_recorder.dir
 /home/lwt1104/correspondence_grouping/build/CMakeFiles/print_point.dir
+/home/lwt1104/correspondence_grouping/build/CMakeFiles/remove_plane.dir

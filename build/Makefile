@@ -137,6 +137,19 @@ print_point/fast:
 	$(MAKE) -f CMakeFiles/print_point.dir/build.make CMakeFiles/print_point.dir/build
 .PHONY : print_point/fast
 
+#=============================================================================
+# Target rules for targets named remove_plane
+
+# Build rule for target.
+remove_plane: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 remove_plane
+.PHONY : remove_plane
+
+# fast build rule for target.
+remove_plane/fast:
+	$(MAKE) -f CMakeFiles/remove_plane.dir/build.make CMakeFiles/remove_plane.dir/build
+.PHONY : remove_plane/fast
+
 correspondence_grouping.o: correspondence_grouping.cpp.o
 .PHONY : correspondence_grouping.o
 
@@ -185,6 +198,30 @@ pcd_recorder.cpp.s:
 	$(MAKE) -f CMakeFiles/pcd_recorder.dir/build.make CMakeFiles/pcd_recorder.dir/pcd_recorder.cpp.s
 .PHONY : pcd_recorder.cpp.s
 
+planar_seg.o: planar_seg.cpp.o
+.PHONY : planar_seg.o
+
+# target to build an object file
+planar_seg.cpp.o:
+	$(MAKE) -f CMakeFiles/remove_plane.dir/build.make CMakeFiles/remove_plane.dir/planar_seg.cpp.o
+.PHONY : planar_seg.cpp.o
+
+planar_seg.i: planar_seg.cpp.i
+.PHONY : planar_seg.i
+
+# target to preprocess a source file
+planar_seg.cpp.i:
+	$(MAKE) -f CMakeFiles/remove_plane.dir/build.make CMakeFiles/remove_plane.dir/planar_seg.cpp.i
+.PHONY : planar_seg.cpp.i
+
+planar_seg.s: planar_seg.cpp.s
+.PHONY : planar_seg.s
+
+# target to generate assembly for a file
+planar_seg.cpp.s:
+	$(MAKE) -f CMakeFiles/remove_plane.dir/build.make CMakeFiles/remove_plane.dir/planar_seg.cpp.s
+.PHONY : planar_seg.cpp.s
+
 print_point.o: print_point.cpp.o
 .PHONY : print_point.o
 
@@ -220,12 +257,16 @@ help:
 	@echo "... pcd_recorder"
 	@echo "... print_point"
 	@echo "... rebuild_cache"
+	@echo "... remove_plane"
 	@echo "... correspondence_grouping.o"
 	@echo "... correspondence_grouping.i"
 	@echo "... correspondence_grouping.s"
 	@echo "... pcd_recorder.o"
 	@echo "... pcd_recorder.i"
 	@echo "... pcd_recorder.s"
+	@echo "... planar_seg.o"
+	@echo "... planar_seg.i"
+	@echo "... planar_seg.s"
 	@echo "... print_point.o"
 	@echo "... print_point.i"
 	@echo "... print_point.s"
