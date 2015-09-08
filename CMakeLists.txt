@@ -17,3 +17,7 @@ target_link_libraries (print_point ${PCL_LIBRARIES})
 add_executable (pcd_recorder pcd_recorder.cpp)
 target_link_libraries (pcd_recorder ${PCL_LIBRARIES})
 
+add_executable (remove_plane planar_seg.cpp)
+target_link_libraries (remove_plane ${PCL_LIBRARIES})
+
+
