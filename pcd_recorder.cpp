@@ -44,8 +44,9 @@
 #include <pcl/console/print.h>
 #include <pcl/console/parse.h>
 #include <pcl/common/time.h> //fps calculations
- #include <termios.h>
+#include <termios.h>
 #include <stdio.h>
+#include <pcl/visualization/cloud_viewer.h>
 
 using namespace std;
 using namespace pcl;
@@ -257,6 +258,7 @@ class Producer
       // } else {
       //   write_counter = 0;
       // }
+      viewer.showCloud (cloud);
       {
         boost::mutex::scoped_lock wflag_lock (wflag_mutex);
         if (!write_once) {
@@ -323,7 +325,8 @@ class Producer
   public:
     Producer (PCDBuffer<PointT> &buf, openni_wrapper::OpenNIDevice::DepthMode depth_mode)
       : buf_ (buf),
-        depth_mode_ (depth_mode)
+        depth_mode_ (depth_mode),
+        viewer ("PCL OpenNI Viewer")
     {
       thread_.reset (new boost::thread (boost::bind (&Producer::grabAndSend, this)));
     }
@@ -343,6 +346,7 @@ class Producer
     PCDBuffer<PointT> &buf_;
     openni_wrapper::OpenNIDevice::DepthMode depth_mode_;
     boost::shared_ptr<boost::thread> thread_;
+    pcl::visualization::CloudViewer viewer;
 };
 
 //////////////////////////////////////////////////////////////////////////////////////////
