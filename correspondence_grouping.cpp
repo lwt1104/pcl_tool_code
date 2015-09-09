@@ -28,7 +28,7 @@ bool show_correspondences_ (false);
 bool use_cloud_resolution_ (false);
 bool use_hough_ (true);
 bool show_all_correspondences_(false);
-float model_ss_ (0.01f);
+float model_ss_ (0.01f);  
 float scene_ss_ (0.03f);
 float rf_rad_ (0.015f);
 float descr_rad_ (0.02f);
@@ -213,20 +213,14 @@ main (int argc, char *argv[])
       descr_rad_  *= resolution;
       cg_size_    *= resolution;
     }
-
     std::cout << "Model resolution:       " << resolution << std::endl;
-    std::cout << "Model sampling size:    " << model_ss_ << std::endl;
-    std::cout << "Scene sampling size:    " << scene_ss_ << std::endl;
-    std::cout << "LRF support radius:     " << rf_rad_ << std::endl;
-    std::cout << "SHOT descriptor radius: " << descr_rad_ << std::endl;
-    std::cout << "Clustering bin size:    " << cg_size_ << std::endl << std::endl;
-  } else {
-    std::cout << "Model sampling size:    " << model_ss_ << std::endl;
-    std::cout << "Scene sampling size:    " << scene_ss_ << std::endl;
-    std::cout << "LRF support radius:     " << rf_rad_ << std::endl;
-    std::cout << "SHOT descriptor radius: " << descr_rad_ << std::endl;
-    std::cout << "Clustering bin size:    " << cg_size_ << std::endl << std::endl;    
   }
+  std::cout << "Model sampling size:    " << model_ss_ << std::endl;
+  std::cout << "Scene sampling size:    " << scene_ss_ << std::endl;
+  std::cout << "LRF support radius:     " << rf_rad_ << std::endl;
+  std::cout << "SHOT descriptor radius: " << descr_rad_ << std::endl;
+  std::cout << "Clustering bin size:    " << cg_size_ << std::endl << std::endl;    
+  
 
   //
   //  Compute Normals

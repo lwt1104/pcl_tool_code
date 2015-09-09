@@ -23,3 +23,7 @@ target_link_libraries (remove_plane ${PCL_LIBRARIES})
 add_executable (cluster_seg cluster_seg.cpp)
 target_link_libraries (cluster_seg ${PCL_LIBRARIES})
 
+add_executable (online_match online_match.cpp)
+target_link_libraries (online_match ${PCL_LIBRARIES})
+
+

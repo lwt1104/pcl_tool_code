@@ -125,6 +125,19 @@ correspondence_grouping/fast:
 .PHONY : correspondence_grouping/fast
 
 #=============================================================================
+# Target rules for targets named online_match
+
+# Build rule for target.
+online_match: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 online_match
+.PHONY : online_match
+
+# fast build rule for target.
+online_match/fast:
+	$(MAKE) -f CMakeFiles/online_match.dir/build.make CMakeFiles/online_match.dir/build
+.PHONY : online_match/fast
+
+#=============================================================================
 # Target rules for targets named pcd_recorder
 
 # Build rule for target.
@@ -211,6 +224,30 @@ correspondence_grouping.cpp.s:
 	$(MAKE) -f CMakeFiles/correspondence_grouping.dir/build.make CMakeFiles/correspondence_grouping.dir/correspondence_grouping.cpp.s
 .PHONY : correspondence_grouping.cpp.s
 
+online_match.o: online_match.cpp.o
+.PHONY : online_match.o
+
+# target to build an object file
+online_match.cpp.o:
+	$(MAKE) -f CMakeFiles/online_match.dir/build.make CMakeFiles/online_match.dir/online_match.cpp.o
+.PHONY : online_match.cpp.o
+
+online_match.i: online_match.cpp.i
+.PHONY : online_match.i
+
+# target to preprocess a source file
+online_match.cpp.i:
+	$(MAKE) -f CMakeFiles/online_match.dir/build.make CMakeFiles/online_match.dir/online_match.cpp.i
+.PHONY : online_match.cpp.i
+
+online_match.s: online_match.cpp.s
+.PHONY : online_match.s
+
+# target to generate assembly for a file
+online_match.cpp.s:
+	$(MAKE) -f CMakeFiles/online_match.dir/build.make CMakeFiles/online_match.dir/online_match.cpp.s
+.PHONY : online_match.cpp.s
+
 pcd_recorder.o: pcd_recorder.cpp.o
 .PHONY : pcd_recorder.o
 
@@ -292,6 +329,7 @@ help:
 	@echo "... cluster_seg"
 	@echo "... correspondence_grouping"
 	@echo "... edit_cache"
+	@echo "... online_match"
 	@echo "... pcd_recorder"
 	@echo "... print_point"
 	@echo "... rebuild_cache"
@@ -302,6 +340,9 @@ help:
 	@echo "... correspondence_grouping.o"
 	@echo "... correspondence_grouping.i"
 	@echo "... correspondence_grouping.s"
+	@echo "... online_match.o"
+	@echo "... online_match.i"
+	@echo "... online_match.s"
 	@echo "... pcd_recorder.o"
 	@echo "... pcd_recorder.i"
 	@echo "... pcd_recorder.s"
