@@ -12,6 +12,12 @@
 int
  main (int argc, char** argv)
 {
+  float min_depth = 0.1;
+  pcl::console::parse_argument (argc, argv, "-min_depth", min_depth);
+
+  float max_depth = std::numeric_limits<float>::max ();
+  pcl::console::parse_argument (argc, argv, "-max_depth", max_depth);
+
   std::vector<int> filenames;
   filenames = pcl::console::parse_file_extension_argument (argc, argv, ".pcd");
 
@@ -57,6 +63,12 @@ int
     for (size_t i = 0; i < inliers->indices.size(); i++) {
       pcl::PointXYZRGBA &p = cloud_extract->points[inliers->indices[i]];
       p.x = p.y = p.z = std::numeric_limits<float>::quiet_NaN ();
+    }
+    for (size_t i = 0; i < cloud_extract->size(); i++) {
+      pcl::PointXYZRGBA &p = cloud_extract->points[i];
+      if (p.z < min_depth || p.z > max_depth) {
+        p.x = p.y = p.z = std::numeric_limits<float>::quiet_NaN ();
+      }
     }
     std::string pcd_filename = argv[filenames[index]];
     pcd_filename.replace(pcd_filename.length () - 4, 8, "_seg.pcd");

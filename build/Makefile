@@ -99,6 +99,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named cluster_seg
+
+# Build rule for target.
+cluster_seg: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 cluster_seg
+.PHONY : cluster_seg
+
+# fast build rule for target.
+cluster_seg/fast:
+	$(MAKE) -f CMakeFiles/cluster_seg.dir/build.make CMakeFiles/cluster_seg.dir/build
+.PHONY : cluster_seg/fast
+
+#=============================================================================
 # Target rules for targets named correspondence_grouping
 
 # Build rule for target.
@@ -149,6 +162,30 @@ remove_plane: cmake_check_build_system
 remove_plane/fast:
 	$(MAKE) -f CMakeFiles/remove_plane.dir/build.make CMakeFiles/remove_plane.dir/build
 .PHONY : remove_plane/fast
+
+cluster_seg.o: cluster_seg.cpp.o
+.PHONY : cluster_seg.o
+
+# target to build an object file
+cluster_seg.cpp.o:
+	$(MAKE) -f CMakeFiles/cluster_seg.dir/build.make CMakeFiles/cluster_seg.dir/cluster_seg.cpp.o
+.PHONY : cluster_seg.cpp.o
+
+cluster_seg.i: cluster_seg.cpp.i
+.PHONY : cluster_seg.i
+
+# target to preprocess a source file
+cluster_seg.cpp.i:
+	$(MAKE) -f CMakeFiles/cluster_seg.dir/build.make CMakeFiles/cluster_seg.dir/cluster_seg.cpp.i
+.PHONY : cluster_seg.cpp.i
+
+cluster_seg.s: cluster_seg.cpp.s
+.PHONY : cluster_seg.s
+
+# target to generate assembly for a file
+cluster_seg.cpp.s:
+	$(MAKE) -f CMakeFiles/cluster_seg.dir/build.make CMakeFiles/cluster_seg.dir/cluster_seg.cpp.s
+.PHONY : cluster_seg.cpp.s
 
 correspondence_grouping.o: correspondence_grouping.cpp.o
 .PHONY : correspondence_grouping.o
@@ -252,12 +289,16 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
+	@echo "... cluster_seg"
 	@echo "... correspondence_grouping"
 	@echo "... edit_cache"
 	@echo "... pcd_recorder"
 	@echo "... print_point"
 	@echo "... rebuild_cache"
 	@echo "... remove_plane"
+	@echo "... cluster_seg.o"
+	@echo "... cluster_seg.i"
+	@echo "... cluster_seg.s"
 	@echo "... correspondence_grouping.o"
 	@echo "... correspondence_grouping.i"
 	@echo "... correspondence_grouping.s"
