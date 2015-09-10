@@ -47,6 +47,7 @@
 #include <termios.h>
 #include <stdio.h>
 #include <pcl/visualization/cloud_viewer.h>
+#include <math.h>  
 
 using namespace std;
 using namespace pcl;
@@ -228,23 +229,73 @@ PCDBuffer<PointT>::getFront ()
 
 // int write_counter = 25;
 boost::mutex wflag_mutex;
+boost::mutex noise_flag_mutex;
+
 bool write_once = false;
+bool calculate_noise = false;
 
 template <typename PointT>
 class Producer
 {
   private:
     ///////////////////////////////////////////////////////////////////////////////////////
+    float getMeanDepth(const typename PointCloud<PointT>::ConstPtr cloud, int row_up, int row_down, int col_left, int col_right) {
+      float sum = 0;
+      int count = 0;
+      for (int row = row_up; row < row_down; row++) {
+        for (int col = col_left; col < col_right; col++) {
+          const PointT &p = cloud->at(col, row);
+          if (!isFinite(p)) {
+            continue;
+          }
+          sum += p.z;
+          count++;
+        }
+      }
+      return sum / count;
+    }
+
+    float getSTD(const std::vector<float>& nums) {
+      float mean = getMean(nums);
+      float error = 0;
+      for (std::vector<float>::const_iterator it = nums.begin(); it != nums.end(); ++ it) {
+        error += ((*it) - mean) * ((*it) - mean);
+      }
+      return sqrt(error / nums.size());
+    }
+
+    float getMean(const std::vector<float>& nums) {
+      float sum = 0;
+      for (std::vector<float>::const_iterator it = nums.begin(); it != nums.end(); ++it) {
+        sum += *it;
+      }
+      return sum / nums.size();
+    }
+
     void 
     grabberCallBack (const typename PointCloud<PointT>::ConstPtr& cloud)
     {
-      // if (write_counter != 250) {
-      //     write_counter++;
-      //   return;
-      // } else {
-      //   write_counter = 0;
-      // }
+
       viewer.showCloud (cloud);
+      if (calculate_noise) {
+        if (num_pcd_sample > 0) {
+          float z = getMeanDepth(cloud, 220, 260, 300, 340);
+          depths_sample.push_back(z);
+          num_pcd_sample--;
+          {
+          //   boost::mutex::scoped_lock io_lock (io_mutex);
+          //   print_info("Sampling, %d; depth: %f.\n", num_pcd_sample, z);
+          }
+        } else {
+          float std_z = getSTD(depths_sample);
+          {
+            boost::mutex::scoped_lock io_lock (io_mutex);
+            print_info("Depth std %f.\n", std_z);
+            print_info("z-depth: %f.\n", depths_sample[0]);
+          }       
+          calculate_noise = false;   
+        }
+      }
       {
         boost::mutex::scoped_lock wflag_lock (wflag_mutex);
         if (!write_once) {
@@ -301,7 +352,15 @@ class Producer
             boost::mutex::scoped_lock wflag_lock (wflag_mutex);
             write_once = true;
           }
-        } 
+        } else if (!is_done && c == 'n'){
+          boost::mutex::scoped_lock io_lock (noise_flag_mutex);
+          if (!calculate_noise) {
+            calculate_noise = true;
+            num_pcd_sample = 100;
+            depths_sample.clear();
+
+          }
+        }
         boost::this_thread::sleep (boost::posix_time::seconds (1));
       }
 
@@ -312,7 +371,8 @@ class Producer
     Producer (PCDBuffer<PointT> &buf, openni_wrapper::OpenNIDevice::DepthMode depth_mode)
       : buf_ (buf),
         depth_mode_ (depth_mode),
-        viewer ("PCL OpenNI Viewer")
+        viewer ("PCL OpenNI Viewer"),
+        num_pcd_sample(0)
     {
       thread_.reset (new boost::thread (boost::bind (&Producer::grabAndSend, this)));
     }
@@ -333,6 +393,8 @@ class Producer
     openni_wrapper::OpenNIDevice::DepthMode depth_mode_;
     boost::shared_ptr<boost::thread> thread_;
     pcl::visualization::CloudViewer viewer;
+    int num_pcd_sample;
+    std::vector<float> depths_sample;
 };
 
 //////////////////////////////////////////////////////////////////////////////////////////
