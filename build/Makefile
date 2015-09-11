@@ -125,6 +125,19 @@ correspondence_grouping/fast:
 .PHONY : correspondence_grouping/fast
 
 #=============================================================================
+# Target rules for targets named global_hypothesis_verification
+
+# Build rule for target.
+global_hypothesis_verification: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 global_hypothesis_verification
+.PHONY : global_hypothesis_verification
+
+# fast build rule for target.
+global_hypothesis_verification/fast:
+	$(MAKE) -f CMakeFiles/global_hypothesis_verification.dir/build.make CMakeFiles/global_hypothesis_verification.dir/build
+.PHONY : global_hypothesis_verification/fast
+
+#=============================================================================
 # Target rules for targets named online_match
 
 # Build rule for target.
@@ -223,6 +236,30 @@ correspondence_grouping.s: correspondence_grouping.cpp.s
 correspondence_grouping.cpp.s:
 	$(MAKE) -f CMakeFiles/correspondence_grouping.dir/build.make CMakeFiles/correspondence_grouping.dir/correspondence_grouping.cpp.s
 .PHONY : correspondence_grouping.cpp.s
+
+global_hypothesis_verification.o: global_hypothesis_verification.cpp.o
+.PHONY : global_hypothesis_verification.o
+
+# target to build an object file
+global_hypothesis_verification.cpp.o:
+	$(MAKE) -f CMakeFiles/global_hypothesis_verification.dir/build.make CMakeFiles/global_hypothesis_verification.dir/global_hypothesis_verification.cpp.o
+.PHONY : global_hypothesis_verification.cpp.o
+
+global_hypothesis_verification.i: global_hypothesis_verification.cpp.i
+.PHONY : global_hypothesis_verification.i
+
+# target to preprocess a source file
+global_hypothesis_verification.cpp.i:
+	$(MAKE) -f CMakeFiles/global_hypothesis_verification.dir/build.make CMakeFiles/global_hypothesis_verification.dir/global_hypothesis_verification.cpp.i
+.PHONY : global_hypothesis_verification.cpp.i
+
+global_hypothesis_verification.s: global_hypothesis_verification.cpp.s
+.PHONY : global_hypothesis_verification.s
+
+# target to generate assembly for a file
+global_hypothesis_verification.cpp.s:
+	$(MAKE) -f CMakeFiles/global_hypothesis_verification.dir/build.make CMakeFiles/global_hypothesis_verification.dir/global_hypothesis_verification.cpp.s
+.PHONY : global_hypothesis_verification.cpp.s
 
 online_match.o: online_match.cpp.o
 .PHONY : online_match.o
@@ -329,6 +366,7 @@ help:
 	@echo "... cluster_seg"
 	@echo "... correspondence_grouping"
 	@echo "... edit_cache"
+	@echo "... global_hypothesis_verification"
 	@echo "... online_match"
 	@echo "... pcd_recorder"
 	@echo "... print_point"
@@ -340,6 +378,9 @@ help:
 	@echo "... correspondence_grouping.o"
 	@echo "... correspondence_grouping.i"
 	@echo "... correspondence_grouping.s"
+	@echo "... global_hypothesis_verification.o"
+	@echo "... global_hypothesis_verification.i"
+	@echo "... global_hypothesis_verification.s"
 	@echo "... online_match.o"
 	@echo "... online_match.i"
 	@echo "... online_match.s"
