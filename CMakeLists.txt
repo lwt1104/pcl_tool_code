@@ -29,3 +29,5 @@ target_link_libraries (online_match ${PCL_LIBRARIES})
 add_executable (global_hypothesis_verification global_hypothesis_verification.cpp)
 target_link_libraries (global_hypothesis_verification ${PCL_LIBRARIES})
 
+add_executable (alignment_prerejective alignment_prerejective.cpp)
+target_link_libraries (alignment_prerejective ${PCL_LIBRARIES})

@@ -99,6 +99,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named alignment_prerejective
+
+# Build rule for target.
+alignment_prerejective: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 alignment_prerejective
+.PHONY : alignment_prerejective
+
+# fast build rule for target.
+alignment_prerejective/fast:
+	$(MAKE) -f CMakeFiles/alignment_prerejective.dir/build.make CMakeFiles/alignment_prerejective.dir/build
+.PHONY : alignment_prerejective/fast
+
+#=============================================================================
 # Target rules for targets named cluster_seg
 
 # Build rule for target.
@@ -188,6 +201,30 @@ remove_plane: cmake_check_build_system
 remove_plane/fast:
 	$(MAKE) -f CMakeFiles/remove_plane.dir/build.make CMakeFiles/remove_plane.dir/build
 .PHONY : remove_plane/fast
+
+alignment_prerejective.o: alignment_prerejective.cpp.o
+.PHONY : alignment_prerejective.o
+
+# target to build an object file
+alignment_prerejective.cpp.o:
+	$(MAKE) -f CMakeFiles/alignment_prerejective.dir/build.make CMakeFiles/alignment_prerejective.dir/alignment_prerejective.cpp.o
+.PHONY : alignment_prerejective.cpp.o
+
+alignment_prerejective.i: alignment_prerejective.cpp.i
+.PHONY : alignment_prerejective.i
+
+# target to preprocess a source file
+alignment_prerejective.cpp.i:
+	$(MAKE) -f CMakeFiles/alignment_prerejective.dir/build.make CMakeFiles/alignment_prerejective.dir/alignment_prerejective.cpp.i
+.PHONY : alignment_prerejective.cpp.i
+
+alignment_prerejective.s: alignment_prerejective.cpp.s
+.PHONY : alignment_prerejective.s
+
+# target to generate assembly for a file
+alignment_prerejective.cpp.s:
+	$(MAKE) -f CMakeFiles/alignment_prerejective.dir/build.make CMakeFiles/alignment_prerejective.dir/alignment_prerejective.cpp.s
+.PHONY : alignment_prerejective.cpp.s
 
 cluster_seg.o: cluster_seg.cpp.o
 .PHONY : cluster_seg.o
@@ -363,6 +400,7 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
+	@echo "... alignment_prerejective"
 	@echo "... cluster_seg"
 	@echo "... correspondence_grouping"
 	@echo "... edit_cache"
@@ -372,6 +410,9 @@ help:
 	@echo "... print_point"
 	@echo "... rebuild_cache"
 	@echo "... remove_plane"
+	@echo "... alignment_prerejective.o"
+	@echo "... alignment_prerejective.i"
+	@echo "... alignment_prerejective.s"
 	@echo "... cluster_seg.o"
 	@echo "... cluster_seg.i"
 	@echo "... cluster_seg.s"

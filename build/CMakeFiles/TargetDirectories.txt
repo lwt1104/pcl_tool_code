@@ -1,3 +1,4 @@
+/home/lwt1104/correspondence_grouping/build/CMakeFiles/alignment_prerejective.dir
 /home/lwt1104/correspondence_grouping/build/CMakeFiles/cluster_seg.dir
 /home/lwt1104/correspondence_grouping/build/CMakeFiles/correspondence_grouping.dir
 /home/lwt1104/correspondence_grouping/build/CMakeFiles/global_hypothesis_verification.dir
