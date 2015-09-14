@@ -1,5 +1,7 @@
 cmake_minimum_required(VERSION 2.6 FATAL_ERROR)
 
+list(APPEND CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR})
+
 project(correspondence_grouping)
 
 find_package(PCL 1.7 REQUIRED)
@@ -31,3 +33,30 @@ target_link_libraries (global_hypothesis_verification ${PCL_LIBRARIES})
 
 add_executable (alignment_prerejective alignment_prerejective.cpp)
 target_link_libraries (alignment_prerejective ${PCL_LIBRARIES})
+
+
+find_package(HDF5)
+if(HDF5_FOUND)
+# find FLANN with pkg-config 
+ find_package(PkgConfig REQUIRED) 
+ pkg_check_modules(FLANN REQUIRED flann) 
+ link_directories(${FLANN_LIBRARY_DIRS}) 
+ include_directories(${FLANN_INCLUDE_DIRS}) 
+ if(FLANN_CFLAGS) 
+   add_definitions(${FLANN_CFLAGS}) 
+ endif(FLANN_CFLAGS)
+
+#  find_package(FLANN)
+#  include_directories(${FLANN_INCLUDE_DIRS})
+
+  include_directories(${HDF5_INCLUDE_DIR})
+
+  add_executable(build_tree build_tree.cpp)
+  target_link_libraries(build_tree ${PCL_LIBRARIES} ${Boost_LIBRARIES}
+                                 ${FLANN_LIBRARIES} ${HDF5_hdf5_LIBRARY})
+
+  add_executable(nearest_neighbors nearest_neighbors.cpp)
+  target_link_libraries(nearest_neighbors ${PCL_LIBRARIES} 
+                                        ${Boost_LIBRARIES} ${FLANN_LIBRARIES} ${HDF5_hdf5_LIBRARY} 
+                                        )
+endif(HDF5_FOUND)

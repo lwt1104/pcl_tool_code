@@ -32,6 +32,7 @@ SET(CMAKE_MAKEFILE_DEPENDS
   "/usr/share/cmake-2.8/Modules/Compiler/GNU-CXX.cmake"
   "/usr/share/cmake-2.8/Modules/Compiler/GNU.cmake"
   "/usr/share/cmake-2.8/Modules/FindBoost.cmake"
+  "/usr/share/cmake-2.8/Modules/FindHDF5.cmake"
   "/usr/share/cmake-2.8/Modules/FindPackageHandleStandardArgs.cmake"
   "/usr/share/cmake-2.8/Modules/FindPackageMessage.cmake"
   "/usr/share/cmake-2.8/Modules/FindPkgConfig.cmake"
@@ -42,6 +43,7 @@ SET(CMAKE_MAKEFILE_DEPENDS
   "/usr/share/cmake-2.8/Modules/Platform/Linux-GNU.cmake"
   "/usr/share/cmake-2.8/Modules/Platform/Linux.cmake"
   "/usr/share/cmake-2.8/Modules/Platform/UnixPaths.cmake"
+  "/usr/share/cmake-2.8/Modules/SelectLibraryConfigurations.cmake"
   "/usr/share/pcl-1.7/PCLConfig.cmake"
   "/usr/share/pcl-1.7/PCLConfigVersion.cmake"
   )
@@ -60,9 +62,11 @@ SET(CMAKE_MAKEFILE_PRODUCTS
 # Dependency information for all targets:
 SET(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/alignment_prerejective.dir/DependInfo.cmake"
+  "CMakeFiles/build_tree.dir/DependInfo.cmake"
   "CMakeFiles/cluster_seg.dir/DependInfo.cmake"
   "CMakeFiles/correspondence_grouping.dir/DependInfo.cmake"
   "CMakeFiles/global_hypothesis_verification.dir/DependInfo.cmake"
+  "CMakeFiles/nearest_neighbors.dir/DependInfo.cmake"
   "CMakeFiles/online_match.dir/DependInfo.cmake"
   "CMakeFiles/pcd_recorder.dir/DependInfo.cmake"
   "CMakeFiles/print_point.dir/DependInfo.cmake"

@@ -112,6 +112,19 @@ alignment_prerejective/fast:
 .PHONY : alignment_prerejective/fast
 
 #=============================================================================
+# Target rules for targets named build_tree
+
+# Build rule for target.
+build_tree: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 build_tree
+.PHONY : build_tree
+
+# fast build rule for target.
+build_tree/fast:
+	$(MAKE) -f CMakeFiles/build_tree.dir/build.make CMakeFiles/build_tree.dir/build
+.PHONY : build_tree/fast
+
+#=============================================================================
 # Target rules for targets named cluster_seg
 
 # Build rule for target.
@@ -149,6 +162,19 @@ global_hypothesis_verification: cmake_check_build_system
 global_hypothesis_verification/fast:
 	$(MAKE) -f CMakeFiles/global_hypothesis_verification.dir/build.make CMakeFiles/global_hypothesis_verification.dir/build
 .PHONY : global_hypothesis_verification/fast
+
+#=============================================================================
+# Target rules for targets named nearest_neighbors
+
+# Build rule for target.
+nearest_neighbors: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 nearest_neighbors
+.PHONY : nearest_neighbors
+
+# fast build rule for target.
+nearest_neighbors/fast:
+	$(MAKE) -f CMakeFiles/nearest_neighbors.dir/build.make CMakeFiles/nearest_neighbors.dir/build
+.PHONY : nearest_neighbors/fast
 
 #=============================================================================
 # Target rules for targets named online_match
@@ -226,6 +252,30 @@ alignment_prerejective.cpp.s:
 	$(MAKE) -f CMakeFiles/alignment_prerejective.dir/build.make CMakeFiles/alignment_prerejective.dir/alignment_prerejective.cpp.s
 .PHONY : alignment_prerejective.cpp.s
 
+build_tree.o: build_tree.cpp.o
+.PHONY : build_tree.o
+
+# target to build an object file
+build_tree.cpp.o:
+	$(MAKE) -f CMakeFiles/build_tree.dir/build.make CMakeFiles/build_tree.dir/build_tree.cpp.o
+.PHONY : build_tree.cpp.o
+
+build_tree.i: build_tree.cpp.i
+.PHONY : build_tree.i
+
+# target to preprocess a source file
+build_tree.cpp.i:
+	$(MAKE) -f CMakeFiles/build_tree.dir/build.make CMakeFiles/build_tree.dir/build_tree.cpp.i
+.PHONY : build_tree.cpp.i
+
+build_tree.s: build_tree.cpp.s
+.PHONY : build_tree.s
+
+# target to generate assembly for a file
+build_tree.cpp.s:
+	$(MAKE) -f CMakeFiles/build_tree.dir/build.make CMakeFiles/build_tree.dir/build_tree.cpp.s
+.PHONY : build_tree.cpp.s
+
 cluster_seg.o: cluster_seg.cpp.o
 .PHONY : cluster_seg.o
 
@@ -297,6 +347,30 @@ global_hypothesis_verification.s: global_hypothesis_verification.cpp.s
 global_hypothesis_verification.cpp.s:
 	$(MAKE) -f CMakeFiles/global_hypothesis_verification.dir/build.make CMakeFiles/global_hypothesis_verification.dir/global_hypothesis_verification.cpp.s
 .PHONY : global_hypothesis_verification.cpp.s
+
+nearest_neighbors.o: nearest_neighbors.cpp.o
+.PHONY : nearest_neighbors.o
+
+# target to build an object file
+nearest_neighbors.cpp.o:
+	$(MAKE) -f CMakeFiles/nearest_neighbors.dir/build.make CMakeFiles/nearest_neighbors.dir/nearest_neighbors.cpp.o
+.PHONY : nearest_neighbors.cpp.o
+
+nearest_neighbors.i: nearest_neighbors.cpp.i
+.PHONY : nearest_neighbors.i
+
+# target to preprocess a source file
+nearest_neighbors.cpp.i:
+	$(MAKE) -f CMakeFiles/nearest_neighbors.dir/build.make CMakeFiles/nearest_neighbors.dir/nearest_neighbors.cpp.i
+.PHONY : nearest_neighbors.cpp.i
+
+nearest_neighbors.s: nearest_neighbors.cpp.s
+.PHONY : nearest_neighbors.s
+
+# target to generate assembly for a file
+nearest_neighbors.cpp.s:
+	$(MAKE) -f CMakeFiles/nearest_neighbors.dir/build.make CMakeFiles/nearest_neighbors.dir/nearest_neighbors.cpp.s
+.PHONY : nearest_neighbors.cpp.s
 
 online_match.o: online_match.cpp.o
 .PHONY : online_match.o
@@ -401,10 +475,12 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... alignment_prerejective"
+	@echo "... build_tree"
 	@echo "... cluster_seg"
 	@echo "... correspondence_grouping"
 	@echo "... edit_cache"
 	@echo "... global_hypothesis_verification"
+	@echo "... nearest_neighbors"
 	@echo "... online_match"
 	@echo "... pcd_recorder"
 	@echo "... print_point"
@@ -413,6 +489,9 @@ help:
 	@echo "... alignment_prerejective.o"
 	@echo "... alignment_prerejective.i"
 	@echo "... alignment_prerejective.s"
+	@echo "... build_tree.o"
+	@echo "... build_tree.i"
+	@echo "... build_tree.s"
 	@echo "... cluster_seg.o"
 	@echo "... cluster_seg.i"
 	@echo "... cluster_seg.s"
@@ -422,6 +501,9 @@ help:
 	@echo "... global_hypothesis_verification.o"
 	@echo "... global_hypothesis_verification.i"
 	@echo "... global_hypothesis_verification.s"
+	@echo "... nearest_neighbors.o"
+	@echo "... nearest_neighbors.i"
+	@echo "... nearest_neighbors.s"
 	@echo "... online_match.o"
 	@echo "... online_match.i"
 	@echo "... online_match.s"
