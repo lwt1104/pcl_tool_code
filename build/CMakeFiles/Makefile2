@@ -193,13 +193,48 @@ clean: CMakeFiles/correspondence_grouping.dir/clean
 .PHONY : clean
 
 #=============================================================================
+# Target rules for target CMakeFiles/get_vfh.dir
+
+# All Build rule for target.
+CMakeFiles/get_vfh.dir/all:
+	$(MAKE) -f CMakeFiles/get_vfh.dir/build.make CMakeFiles/get_vfh.dir/depend
+	$(MAKE) -f CMakeFiles/get_vfh.dir/build.make CMakeFiles/get_vfh.dir/build
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/lwt1104/correspondence_grouping/build/CMakeFiles  5
+	@echo "Built target get_vfh"
+.PHONY : CMakeFiles/get_vfh.dir/all
+
+# Include target in all.
+all: CMakeFiles/get_vfh.dir/all
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/get_vfh.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lwt1104/correspondence_grouping/build/CMakeFiles 1
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/get_vfh.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lwt1104/correspondence_grouping/build/CMakeFiles 0
+.PHONY : CMakeFiles/get_vfh.dir/rule
+
+# Convenience name for target.
+get_vfh: CMakeFiles/get_vfh.dir/rule
+.PHONY : get_vfh
+
+# clean rule for target.
+CMakeFiles/get_vfh.dir/clean:
+	$(MAKE) -f CMakeFiles/get_vfh.dir/build.make CMakeFiles/get_vfh.dir/clean
+.PHONY : CMakeFiles/get_vfh.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/get_vfh.dir/clean
+.PHONY : clean
+
+#=============================================================================
 # Target rules for target CMakeFiles/global_hypothesis_verification.dir
 
 # All Build rule for target.
 CMakeFiles/global_hypothesis_verification.dir/all:
 	$(MAKE) -f CMakeFiles/global_hypothesis_verification.dir/build.make CMakeFiles/global_hypothesis_verification.dir/depend
 	$(MAKE) -f CMakeFiles/global_hypothesis_verification.dir/build.make CMakeFiles/global_hypothesis_verification.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/lwt1104/correspondence_grouping/build/CMakeFiles  5
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/lwt1104/correspondence_grouping/build/CMakeFiles  6
 	@echo "Built target global_hypothesis_verification"
 .PHONY : CMakeFiles/global_hypothesis_verification.dir/all
 
@@ -228,13 +263,48 @@ clean: CMakeFiles/global_hypothesis_verification.dir/clean
 .PHONY : clean
 
 #=============================================================================
+# Target rules for target CMakeFiles/histogram_match.dir
+
+# All Build rule for target.
+CMakeFiles/histogram_match.dir/all:
+	$(MAKE) -f CMakeFiles/histogram_match.dir/build.make CMakeFiles/histogram_match.dir/depend
+	$(MAKE) -f CMakeFiles/histogram_match.dir/build.make CMakeFiles/histogram_match.dir/build
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/lwt1104/correspondence_grouping/build/CMakeFiles  7
+	@echo "Built target histogram_match"
+.PHONY : CMakeFiles/histogram_match.dir/all
+
+# Include target in all.
+all: CMakeFiles/histogram_match.dir/all
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/histogram_match.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lwt1104/correspondence_grouping/build/CMakeFiles 1
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/histogram_match.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lwt1104/correspondence_grouping/build/CMakeFiles 0
+.PHONY : CMakeFiles/histogram_match.dir/rule
+
+# Convenience name for target.
+histogram_match: CMakeFiles/histogram_match.dir/rule
+.PHONY : histogram_match
+
+# clean rule for target.
+CMakeFiles/histogram_match.dir/clean:
+	$(MAKE) -f CMakeFiles/histogram_match.dir/build.make CMakeFiles/histogram_match.dir/clean
+.PHONY : CMakeFiles/histogram_match.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/histogram_match.dir/clean
+.PHONY : clean
+
+#=============================================================================
 # Target rules for target CMakeFiles/nearest_neighbors.dir
 
 # All Build rule for target.
 CMakeFiles/nearest_neighbors.dir/all:
 	$(MAKE) -f CMakeFiles/nearest_neighbors.dir/build.make CMakeFiles/nearest_neighbors.dir/depend
 	$(MAKE) -f CMakeFiles/nearest_neighbors.dir/build.make CMakeFiles/nearest_neighbors.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/lwt1104/correspondence_grouping/build/CMakeFiles  6
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/lwt1104/correspondence_grouping/build/CMakeFiles  8
 	@echo "Built target nearest_neighbors"
 .PHONY : CMakeFiles/nearest_neighbors.dir/all
 
@@ -269,7 +339,7 @@ clean: CMakeFiles/nearest_neighbors.dir/clean
 CMakeFiles/online_match.dir/all:
 	$(MAKE) -f CMakeFiles/online_match.dir/build.make CMakeFiles/online_match.dir/depend
 	$(MAKE) -f CMakeFiles/online_match.dir/build.make CMakeFiles/online_match.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/lwt1104/correspondence_grouping/build/CMakeFiles  7
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/lwt1104/correspondence_grouping/build/CMakeFiles  9
 	@echo "Built target online_match"
 .PHONY : CMakeFiles/online_match.dir/all
 
@@ -304,7 +374,7 @@ clean: CMakeFiles/online_match.dir/clean
 CMakeFiles/pcd2png.dir/all:
 	$(MAKE) -f CMakeFiles/pcd2png.dir/build.make CMakeFiles/pcd2png.dir/depend
 	$(MAKE) -f CMakeFiles/pcd2png.dir/build.make CMakeFiles/pcd2png.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/lwt1104/correspondence_grouping/build/CMakeFiles  8
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/lwt1104/correspondence_grouping/build/CMakeFiles  10
 	@echo "Built target pcd2png"
 .PHONY : CMakeFiles/pcd2png.dir/all
 
@@ -339,7 +409,7 @@ clean: CMakeFiles/pcd2png.dir/clean
 CMakeFiles/pcd_recorder.dir/all:
 	$(MAKE) -f CMakeFiles/pcd_recorder.dir/build.make CMakeFiles/pcd_recorder.dir/depend
 	$(MAKE) -f CMakeFiles/pcd_recorder.dir/build.make CMakeFiles/pcd_recorder.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/lwt1104/correspondence_grouping/build/CMakeFiles  9
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/lwt1104/correspondence_grouping/build/CMakeFiles  11
 	@echo "Built target pcd_recorder"
 .PHONY : CMakeFiles/pcd_recorder.dir/all
 
@@ -374,7 +444,7 @@ clean: CMakeFiles/pcd_recorder.dir/clean
 CMakeFiles/plane_cluster_seg.dir/all:
 	$(MAKE) -f CMakeFiles/plane_cluster_seg.dir/build.make CMakeFiles/plane_cluster_seg.dir/depend
 	$(MAKE) -f CMakeFiles/plane_cluster_seg.dir/build.make CMakeFiles/plane_cluster_seg.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/lwt1104/correspondence_grouping/build/CMakeFiles  10
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/lwt1104/correspondence_grouping/build/CMakeFiles  12
 	@echo "Built target plane_cluster_seg"
 .PHONY : CMakeFiles/plane_cluster_seg.dir/all
 
@@ -409,7 +479,7 @@ clean: CMakeFiles/plane_cluster_seg.dir/clean
 CMakeFiles/print_point.dir/all:
 	$(MAKE) -f CMakeFiles/print_point.dir/build.make CMakeFiles/print_point.dir/depend
 	$(MAKE) -f CMakeFiles/print_point.dir/build.make CMakeFiles/print_point.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/lwt1104/correspondence_grouping/build/CMakeFiles  11
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/lwt1104/correspondence_grouping/build/CMakeFiles  13
 	@echo "Built target print_point"
 .PHONY : CMakeFiles/print_point.dir/all
 
@@ -444,7 +514,7 @@ clean: CMakeFiles/print_point.dir/clean
 CMakeFiles/remove_plane.dir/all:
 	$(MAKE) -f CMakeFiles/remove_plane.dir/build.make CMakeFiles/remove_plane.dir/depend
 	$(MAKE) -f CMakeFiles/remove_plane.dir/build.make CMakeFiles/remove_plane.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/lwt1104/correspondence_grouping/build/CMakeFiles  12
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/lwt1104/correspondence_grouping/build/CMakeFiles  14
 	@echo "Built target remove_plane"
 .PHONY : CMakeFiles/remove_plane.dir/all
 

@@ -151,6 +151,19 @@ correspondence_grouping/fast:
 .PHONY : correspondence_grouping/fast
 
 #=============================================================================
+# Target rules for targets named get_vfh
+
+# Build rule for target.
+get_vfh: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 get_vfh
+.PHONY : get_vfh
+
+# fast build rule for target.
+get_vfh/fast:
+	$(MAKE) -f CMakeFiles/get_vfh.dir/build.make CMakeFiles/get_vfh.dir/build
+.PHONY : get_vfh/fast
+
+#=============================================================================
 # Target rules for targets named global_hypothesis_verification
 
 # Build rule for target.
@@ -162,6 +175,19 @@ global_hypothesis_verification: cmake_check_build_system
 global_hypothesis_verification/fast:
 	$(MAKE) -f CMakeFiles/global_hypothesis_verification.dir/build.make CMakeFiles/global_hypothesis_verification.dir/build
 .PHONY : global_hypothesis_verification/fast
+
+#=============================================================================
+# Target rules for targets named histogram_match
+
+# Build rule for target.
+histogram_match: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 histogram_match
+.PHONY : histogram_match
+
+# fast build rule for target.
+histogram_match/fast:
+	$(MAKE) -f CMakeFiles/histogram_match.dir/build.make CMakeFiles/histogram_match.dir/build
+.PHONY : histogram_match/fast
 
 #=============================================================================
 # Target rules for targets named nearest_neighbors
@@ -350,6 +376,30 @@ correspondence_grouping.cpp.s:
 	$(MAKE) -f CMakeFiles/correspondence_grouping.dir/build.make CMakeFiles/correspondence_grouping.dir/correspondence_grouping.cpp.s
 .PHONY : correspondence_grouping.cpp.s
 
+get_vfh.o: get_vfh.cpp.o
+.PHONY : get_vfh.o
+
+# target to build an object file
+get_vfh.cpp.o:
+	$(MAKE) -f CMakeFiles/get_vfh.dir/build.make CMakeFiles/get_vfh.dir/get_vfh.cpp.o
+.PHONY : get_vfh.cpp.o
+
+get_vfh.i: get_vfh.cpp.i
+.PHONY : get_vfh.i
+
+# target to preprocess a source file
+get_vfh.cpp.i:
+	$(MAKE) -f CMakeFiles/get_vfh.dir/build.make CMakeFiles/get_vfh.dir/get_vfh.cpp.i
+.PHONY : get_vfh.cpp.i
+
+get_vfh.s: get_vfh.cpp.s
+.PHONY : get_vfh.s
+
+# target to generate assembly for a file
+get_vfh.cpp.s:
+	$(MAKE) -f CMakeFiles/get_vfh.dir/build.make CMakeFiles/get_vfh.dir/get_vfh.cpp.s
+.PHONY : get_vfh.cpp.s
+
 global_hypothesis_verification.o: global_hypothesis_verification.cpp.o
 .PHONY : global_hypothesis_verification.o
 
@@ -373,6 +423,30 @@ global_hypothesis_verification.s: global_hypothesis_verification.cpp.s
 global_hypothesis_verification.cpp.s:
 	$(MAKE) -f CMakeFiles/global_hypothesis_verification.dir/build.make CMakeFiles/global_hypothesis_verification.dir/global_hypothesis_verification.cpp.s
 .PHONY : global_hypothesis_verification.cpp.s
+
+histogram_match.o: histogram_match.cpp.o
+.PHONY : histogram_match.o
+
+# target to build an object file
+histogram_match.cpp.o:
+	$(MAKE) -f CMakeFiles/histogram_match.dir/build.make CMakeFiles/histogram_match.dir/histogram_match.cpp.o
+.PHONY : histogram_match.cpp.o
+
+histogram_match.i: histogram_match.cpp.i
+.PHONY : histogram_match.i
+
+# target to preprocess a source file
+histogram_match.cpp.i:
+	$(MAKE) -f CMakeFiles/histogram_match.dir/build.make CMakeFiles/histogram_match.dir/histogram_match.cpp.i
+.PHONY : histogram_match.cpp.i
+
+histogram_match.s: histogram_match.cpp.s
+.PHONY : histogram_match.s
+
+# target to generate assembly for a file
+histogram_match.cpp.s:
+	$(MAKE) -f CMakeFiles/histogram_match.dir/build.make CMakeFiles/histogram_match.dir/histogram_match.cpp.s
+.PHONY : histogram_match.cpp.s
 
 nearest_neighbors.o: nearest_neighbors.cpp.o
 .PHONY : nearest_neighbors.o
@@ -553,7 +627,9 @@ help:
 	@echo "... cluster_seg"
 	@echo "... correspondence_grouping"
 	@echo "... edit_cache"
+	@echo "... get_vfh"
 	@echo "... global_hypothesis_verification"
+	@echo "... histogram_match"
 	@echo "... nearest_neighbors"
 	@echo "... online_match"
 	@echo "... pcd2png"
@@ -574,9 +650,15 @@ help:
 	@echo "... correspondence_grouping.o"
 	@echo "... correspondence_grouping.i"
 	@echo "... correspondence_grouping.s"
+	@echo "... get_vfh.o"
+	@echo "... get_vfh.i"
+	@echo "... get_vfh.s"
 	@echo "... global_hypothesis_verification.o"
 	@echo "... global_hypothesis_verification.i"
 	@echo "... global_hypothesis_verification.s"
+	@echo "... histogram_match.o"
+	@echo "... histogram_match.i"
+	@echo "... histogram_match.s"
 	@echo "... nearest_neighbors.o"
 	@echo "... nearest_neighbors.i"
 	@echo "... nearest_neighbors.s"

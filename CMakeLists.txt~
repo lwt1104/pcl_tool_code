@@ -5,6 +5,8 @@ list(APPEND CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR})
 project(correspondence_grouping)
 
 find_package(PCL 1.7 REQUIRED)
+find_package(PNG REQUIRED)
+find_package( OpenCV REQUIRED )
 
 include_directories(${PCL_INCLUDE_DIRS})
 link_directories(${PCL_LIBRARY_DIRS})
@@ -41,6 +43,12 @@ target_link_libraries (plane_cluster_seg ${PCL_LIBRARIES})
 
 add_executable (pcd2png pcd2png.cpp)
 target_link_libraries (pcd2png ${PCL_LIBRARIES} ${PNG_LIBRARY})
+
+add_executable(get_vfh get_vfh.cpp)
+target_link_libraries(get_vfh ${PCL_LIBRARIES})
+
+add_executable(histogram_match histogram_match.cpp )
+target_link_libraries( histogram_match ${OpenCV_LIBS} )
 
 find_package(HDF5)
 if(HDF5_FOUND)

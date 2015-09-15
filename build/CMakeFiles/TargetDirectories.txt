@@ -2,7 +2,9 @@
 /home/lwt1104/correspondence_grouping/build/CMakeFiles/build_tree.dir
 /home/lwt1104/correspondence_grouping/build/CMakeFiles/cluster_seg.dir
 /home/lwt1104/correspondence_grouping/build/CMakeFiles/correspondence_grouping.dir
+/home/lwt1104/correspondence_grouping/build/CMakeFiles/get_vfh.dir
 /home/lwt1104/correspondence_grouping/build/CMakeFiles/global_hypothesis_verification.dir
+/home/lwt1104/correspondence_grouping/build/CMakeFiles/histogram_match.dir
 /home/lwt1104/correspondence_grouping/build/CMakeFiles/nearest_neighbors.dir
 /home/lwt1104/correspondence_grouping/build/CMakeFiles/online_match.dir
 /home/lwt1104/correspondence_grouping/build/CMakeFiles/pcd2png.dir
