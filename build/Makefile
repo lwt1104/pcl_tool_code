@@ -190,6 +190,19 @@ online_match/fast:
 .PHONY : online_match/fast
 
 #=============================================================================
+# Target rules for targets named pcd2png
+
+# Build rule for target.
+pcd2png: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 pcd2png
+.PHONY : pcd2png
+
+# fast build rule for target.
+pcd2png/fast:
+	$(MAKE) -f CMakeFiles/pcd2png.dir/build.make CMakeFiles/pcd2png.dir/build
+.PHONY : pcd2png/fast
+
+#=============================================================================
 # Target rules for targets named pcd_recorder
 
 # Build rule for target.
@@ -201,6 +214,19 @@ pcd_recorder: cmake_check_build_system
 pcd_recorder/fast:
 	$(MAKE) -f CMakeFiles/pcd_recorder.dir/build.make CMakeFiles/pcd_recorder.dir/build
 .PHONY : pcd_recorder/fast
+
+#=============================================================================
+# Target rules for targets named plane_cluster_seg
+
+# Build rule for target.
+plane_cluster_seg: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 plane_cluster_seg
+.PHONY : plane_cluster_seg
+
+# fast build rule for target.
+plane_cluster_seg/fast:
+	$(MAKE) -f CMakeFiles/plane_cluster_seg.dir/build.make CMakeFiles/plane_cluster_seg.dir/build
+.PHONY : plane_cluster_seg/fast
 
 #=============================================================================
 # Target rules for targets named print_point
@@ -396,6 +422,30 @@ online_match.cpp.s:
 	$(MAKE) -f CMakeFiles/online_match.dir/build.make CMakeFiles/online_match.dir/online_match.cpp.s
 .PHONY : online_match.cpp.s
 
+pcd2png.o: pcd2png.cpp.o
+.PHONY : pcd2png.o
+
+# target to build an object file
+pcd2png.cpp.o:
+	$(MAKE) -f CMakeFiles/pcd2png.dir/build.make CMakeFiles/pcd2png.dir/pcd2png.cpp.o
+.PHONY : pcd2png.cpp.o
+
+pcd2png.i: pcd2png.cpp.i
+.PHONY : pcd2png.i
+
+# target to preprocess a source file
+pcd2png.cpp.i:
+	$(MAKE) -f CMakeFiles/pcd2png.dir/build.make CMakeFiles/pcd2png.dir/pcd2png.cpp.i
+.PHONY : pcd2png.cpp.i
+
+pcd2png.s: pcd2png.cpp.s
+.PHONY : pcd2png.s
+
+# target to generate assembly for a file
+pcd2png.cpp.s:
+	$(MAKE) -f CMakeFiles/pcd2png.dir/build.make CMakeFiles/pcd2png.dir/pcd2png.cpp.s
+.PHONY : pcd2png.cpp.s
+
 pcd_recorder.o: pcd_recorder.cpp.o
 .PHONY : pcd_recorder.o
 
@@ -444,6 +494,30 @@ planar_seg.cpp.s:
 	$(MAKE) -f CMakeFiles/remove_plane.dir/build.make CMakeFiles/remove_plane.dir/planar_seg.cpp.s
 .PHONY : planar_seg.cpp.s
 
+plane_cluster_seg.o: plane_cluster_seg.cpp.o
+.PHONY : plane_cluster_seg.o
+
+# target to build an object file
+plane_cluster_seg.cpp.o:
+	$(MAKE) -f CMakeFiles/plane_cluster_seg.dir/build.make CMakeFiles/plane_cluster_seg.dir/plane_cluster_seg.cpp.o
+.PHONY : plane_cluster_seg.cpp.o
+
+plane_cluster_seg.i: plane_cluster_seg.cpp.i
+.PHONY : plane_cluster_seg.i
+
+# target to preprocess a source file
+plane_cluster_seg.cpp.i:
+	$(MAKE) -f CMakeFiles/plane_cluster_seg.dir/build.make CMakeFiles/plane_cluster_seg.dir/plane_cluster_seg.cpp.i
+.PHONY : plane_cluster_seg.cpp.i
+
+plane_cluster_seg.s: plane_cluster_seg.cpp.s
+.PHONY : plane_cluster_seg.s
+
+# target to generate assembly for a file
+plane_cluster_seg.cpp.s:
+	$(MAKE) -f CMakeFiles/plane_cluster_seg.dir/build.make CMakeFiles/plane_cluster_seg.dir/plane_cluster_seg.cpp.s
+.PHONY : plane_cluster_seg.cpp.s
+
 print_point.o: print_point.cpp.o
 .PHONY : print_point.o
 
@@ -482,7 +556,9 @@ help:
 	@echo "... global_hypothesis_verification"
 	@echo "... nearest_neighbors"
 	@echo "... online_match"
+	@echo "... pcd2png"
 	@echo "... pcd_recorder"
+	@echo "... plane_cluster_seg"
 	@echo "... print_point"
 	@echo "... rebuild_cache"
 	@echo "... remove_plane"
@@ -507,12 +583,18 @@ help:
 	@echo "... online_match.o"
 	@echo "... online_match.i"
 	@echo "... online_match.s"
+	@echo "... pcd2png.o"
+	@echo "... pcd2png.i"
+	@echo "... pcd2png.s"
 	@echo "... pcd_recorder.o"
 	@echo "... pcd_recorder.i"
 	@echo "... pcd_recorder.s"
 	@echo "... planar_seg.o"
 	@echo "... planar_seg.i"
 	@echo "... planar_seg.s"
+	@echo "... plane_cluster_seg.o"
+	@echo "... plane_cluster_seg.i"
+	@echo "... plane_cluster_seg.s"
 	@echo "... print_point.o"
 	@echo "... print_point.i"
 	@echo "... print_point.s"

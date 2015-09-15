@@ -5,10 +5,13 @@ list(APPEND CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR})
 project(correspondence_grouping)
 
 find_package(PCL 1.7 REQUIRED)
+find_package(PNG REQUIRED)
 
 include_directories(${PCL_INCLUDE_DIRS})
 link_directories(${PCL_LIBRARY_DIRS})
 add_definitions(${PCL_DEFINITIONS})
+
+include_directories(${PNG_INCLUDE_DIR})
 
 add_executable (correspondence_grouping correspondence_grouping.cpp)
 target_link_libraries (correspondence_grouping ${PCL_LIBRARIES})
@@ -34,6 +37,11 @@ target_link_libraries (global_hypothesis_verification ${PCL_LIBRARIES})
 add_executable (alignment_prerejective alignment_prerejective.cpp)
 target_link_libraries (alignment_prerejective ${PCL_LIBRARIES})
 
+add_executable (plane_cluster_seg plane_cluster_seg.cpp)
+target_link_libraries (plane_cluster_seg ${PCL_LIBRARIES})
+
+add_executable (pcd2png pcd2png.cpp)
+target_link_libraries (pcd2png ${PCL_LIBRARIES} ${PNG_LIBRARY})
 
 find_package(HDF5)
 if(HDF5_FOUND)
@@ -60,3 +68,4 @@ if(HDF5_FOUND)
                                         ${Boost_LIBRARIES} ${FLANN_LIBRARIES} ${HDF5_hdf5_LIBRARY} 
                                         )
 endif(HDF5_FOUND)
+

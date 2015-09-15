@@ -30,6 +30,7 @@
 #include <boost/filesystem.hpp>
 #include <pcl/features/normal_3d_omp.h>
 #include <pcl/features/vfh.h>
+#include <pcl/filters/filter.h>
 
 
 typedef std::pair<std::string, std::vector<float> > vfh_model;
@@ -50,6 +51,11 @@ loadHist (const boost::filesystem::path &path, vfh_model &vfh)
     PCL_ERROR ("Couldn't read file %s.pcd \n", path.string().c_str());
     return false;
   }
+
+  pcl::PointCloud<PointType>::Ptr cloud_filtered (new pcl::PointCloud<PointType>);
+  std::vector<int> filter_index;
+  pcl::removeNaNFromPointCloud (*cloud, *cloud_filtered, filter_index);
+  cloud = cloud_filtered;
 
   pcl::NormalEstimationOMP<PointType, NormalType> norm_est;
   norm_est.setKSearch (15);

@@ -4,4 +4,9 @@
 
 ./global_hypothesis_verification --model_ss 0.02 --scene_ss 0.02 --rf_rad 0.015 --descr_rad 0.03 --cg_size 0.05 ../cup_model0.pcd ../cup_scene_3.pcd 
 
+// Note don't name a folder containing vfh
+./build_tree ../data/
+
+./nearest_neighbors ../cup_model1.pcd -k 1 -thresh 50
+
 

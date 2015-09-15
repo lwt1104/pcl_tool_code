@@ -472,6 +472,15 @@ PCL_VISUALIZATION_LIBRARY_DEBUG:FILEPATH=/usr/lib/libpcl_visualization.so
 //pkg-config executable
 PKG_CONFIG_EXECUTABLE:FILEPATH=/usr/bin/pkg-config
 
+//Path to a library.
+PNG_LIBRARY_DEBUG:FILEPATH=PNG_LIBRARY_DEBUG-NOTFOUND
+
+//Path to a library.
+PNG_LIBRARY_RELEASE:FILEPATH=/usr/lib/x86_64-linux-gnu/libpng.so
+
+//Path to a file.
+PNG_PNG_INCLUDE_DIR:PATH=/usr/include
+
 //Path to a file.
 QHULL_INCLUDE_DIRS:PATH=/usr/include
 
@@ -480,6 +489,12 @@ QHULL_LIBRARY:FILEPATH=/usr/lib/x86_64-linux-gnu/libqhull.so
 
 //Path to a library.
 QHULL_LIBRARY_DEBUG:FILEPATH=/usr/lib/x86_64-linux-gnu/libqhull.so
+
+//Path to a file.
+ZLIB_INCLUDE_DIR:PATH=/usr/include
+
+//Path to a library.
+ZLIB_LIBRARY:FILEPATH=/usr/lib/x86_64-linux-gnu/libz.so
 
 //Value Computed by CMake
 correspondence_grouping_BINARY_DIR:STATIC=/home/lwt1104/correspondence_grouping/build
@@ -697,8 +712,12 @@ FIND_PACKAGE_MESSAGE_DETAILS_PCL_SURFACE:INTERNAL=[/usr/lib/libpcl_surface.so][/
 FIND_PACKAGE_MESSAGE_DETAILS_PCL_TRACKING:INTERNAL=[/usr/lib/libpcl_tracking.so][/usr/include/pcl-1.7][v()]
 //Details about finding PCL_VISUALIZATION
 FIND_PACKAGE_MESSAGE_DETAILS_PCL_VISUALIZATION:INTERNAL=[/usr/lib/libpcl_visualization.so][/usr/include/pcl-1.7][v()]
+//Details about finding PNG
+FIND_PACKAGE_MESSAGE_DETAILS_PNG:INTERNAL=[/usr/lib/x86_64-linux-gnu/libpng.so][/usr/include][v1.2.50()]
 //Details about finding PkgConfig
 FIND_PACKAGE_MESSAGE_DETAILS_PkgConfig:INTERNAL=[/usr/bin/pkg-config][v0.26()]
+//Details about finding ZLIB
+FIND_PACKAGE_MESSAGE_DETAILS_ZLIB:INTERNAL=[/usr/lib/x86_64-linux-gnu/libz.so][/usr/include][v1.2.8()]
 //Details about finding eigen
 FIND_PACKAGE_MESSAGE_DETAILS_eigen:INTERNAL=[/usr/include/eigen3][v()]
 //Details about finding libusb-1.0
@@ -983,6 +1002,16 @@ PC_OPENNI_libopenni_PREFIX:INTERNAL=
 PC_OPENNI_libopenni_VERSION:INTERNAL=
 //ADVANCED property for variable: PKG_CONFIG_EXECUTABLE
 PKG_CONFIG_EXECUTABLE-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: PNG_LIBRARY_DEBUG
+PNG_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: PNG_LIBRARY_RELEASE
+PNG_LIBRARY_RELEASE-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: PNG_PNG_INCLUDE_DIR
+PNG_PNG_INCLUDE_DIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: ZLIB_INCLUDE_DIR
+ZLIB_INCLUDE_DIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: ZLIB_LIBRARY
+ZLIB_LIBRARY-ADVANCED:INTERNAL=1
 //Last used BOOST_INCLUDEDIR value.
 _BOOST_INCLUDEDIR_LAST:INTERNAL=/usr/include
 //Last used Boost_ADDITIONAL_VERSIONS value.
