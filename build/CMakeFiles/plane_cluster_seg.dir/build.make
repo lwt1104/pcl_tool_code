@@ -153,6 +153,7 @@ plane_cluster_seg: /usr/lib/libvtkInfovis.so.5.8.0
 plane_cluster_seg: /usr/lib/libvtkGeovis.so.5.8.0
 plane_cluster_seg: /usr/lib/libvtkViews.so.5.8.0
 plane_cluster_seg: /usr/lib/libvtkCharts.so.5.8.0
+plane_cluster_seg: /usr/lib/x86_64-linux-gnu/libpng.so
 plane_cluster_seg: /usr/lib/libpcl_common.so
 plane_cluster_seg: /usr/lib/libpcl_kdtree.so
 plane_cluster_seg: /usr/lib/libpcl_octree.so
@@ -171,6 +172,7 @@ plane_cluster_seg: /usr/lib/libpcl_people.so
 plane_cluster_seg: /usr/lib/libpcl_outofcore.so
 plane_cluster_seg: /usr/lib/libpcl_tracking.so
 plane_cluster_seg: /usr/lib/libpcl_apps.so
+plane_cluster_seg: /usr/lib/x86_64-linux-gnu/libpng.so
 plane_cluster_seg: /usr/lib/libvtkViews.so.5.8.0
 plane_cluster_seg: /usr/lib/libvtkInfovis.so.5.8.0
 plane_cluster_seg: /usr/lib/libvtkWidgets.so.5.8.0

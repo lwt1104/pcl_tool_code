@@ -7,5 +7,6 @@
 // Note don't name a folder containing vfh
 ./build_tree ../data/
 
+./nearest_neighbors ../cup_model1.pcd -k 1 -thresh 50
 
 

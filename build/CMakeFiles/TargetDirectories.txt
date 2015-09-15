@@ -1,5 +1,6 @@
 /home/lwt1104/correspondence_grouping/build/CMakeFiles/alignment_prerejective.dir
 /home/lwt1104/correspondence_grouping/build/CMakeFiles/build_tree.dir
+/home/lwt1104/correspondence_grouping/build/CMakeFiles/calculate_hist.dir
 /home/lwt1104/correspondence_grouping/build/CMakeFiles/cluster_seg.dir
 /home/lwt1104/correspondence_grouping/build/CMakeFiles/correspondence_grouping.dir
 /home/lwt1104/correspondence_grouping/build/CMakeFiles/get_vfh.dir

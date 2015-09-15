@@ -10,7 +10,8 @@
 #include <pcl/sample_consensus/model_types.h>
 #include <pcl/segmentation/sac_segmentation.h>
 #include <pcl/segmentation/extract_clusters.h>
-
+#include "png++/png.hpp"
+#include <pcl/console/parse.h>
 
 
 struct _PointXYZRGBUV
@@ -110,18 +111,41 @@ main (int argc, char** argv)
   pcl::PCDReader reader;
   pcl::PCDWriter writer;
   pcl::PointCloud<PointType>::Ptr cloud (new pcl::PointCloud<PointType>);
-  reader.read (argv[1], *cloud);
+  std::vector<int> filenames;
+  filenames = pcl::console::parse_file_extension_argument (argc, argv, ".pcd");
+  reader.read (argv[filenames[0]], *cloud);
   std::string pcd_filename;
+  std::string png_filename = argv[filenames[0]];
 
-  std::cout << "PointCloud before filtering has: " << cloud->points.size () << " data points." << std::endl; //*
+  // Take the origional png image out
+  png::image<png::rgb_pixel> origin_image(cloud->width, cloud->height);
+  int origin_index = 0;
+  for (size_t y = 0; y < origin_image.get_height (); ++y) {
+    for (size_t x = 0; x < origin_image.get_width (); ++x) {
+      const PointType & p = cloud->points[origin_index++];
+      origin_image[y][x] = png::rgb_pixel(p.r, p.g, p.b);
+    }
+  }
 
-  remove_plane(cloud, 0.2, 2.0);
+  png_filename.replace(png_filename.length () - 4, 4, ".png");
+  origin_image.write(png_filename);
 
-  pcd_filename = argv[1];
+  std::cout << "PointCloud before filtering has: " << cloud->points.size () << " data points." << std::endl; //*  
+
+  float min_depth = 0.1;
+  pcl::console::parse_argument (argc, argv, "-min_depth", min_depth);
+
+  float max_depth = 3.0;
+  pcl::console::parse_argument (argc, argv, "-max_depth", max_depth);
+
+  remove_plane(cloud, min_depth, max_depth);
+
+  pcd_filename = argv[filenames[0]];
   pcd_filename.replace(pcd_filename.length () - 4, 8, "plane.pcd");
   pcl::io::savePCDFile(pcd_filename, *cloud);
 
   std::cout << "PointCloud after removing the plane has: " << cloud->points.size () << " data points." << std::endl; //*
+  uint32_t xmin = 1000, xmax = 0, ymin = 1000, ymax = 0;
 
   pcl::PointCloud<PointXYZRGBUV>::Ptr cloud_uv (new pcl::PointCloud<PointXYZRGBUV>);
   for (size_t index = 0; index < cloud->points.size(); index++) {
@@ -142,35 +166,66 @@ main (int argc, char** argv)
 
   std::vector<pcl::PointIndices> cluster_indices;
   pcl::EuclideanClusterExtraction<PointXYZRGBUV> ec;
-  ec.setClusterTolerance (0.03); // 2cm
-  ec.setMinClusterSize (300);
+  ec.setClusterTolerance (0.02); // 2cm
+  ec.setMinClusterSize (800);
   ec.setMaxClusterSize (25000);
   ec.setSearchMethod (tree);
   ec.setInputCloud (cloud_uv);
   ec.extract (cluster_indices);
-
+  
+  xmin = 1000;
+  xmax = 0; 
+  ymin = 1000;
+  ymax = 0;
 
   int j = 0;
   for (std::vector<pcl::PointIndices>::const_iterator it = cluster_indices.begin (); it != cluster_indices.end (); ++it)
   {
     pcl::PointCloud<pcl::PointXYZRGB>::Ptr cloud_cluster (new pcl::PointCloud<pcl::PointXYZRGB>);
+
     for (std::vector<int>::const_iterator pit = it->indices.begin (); pit != it->indices.end (); ++pit) {
         PointXYZRGBUV& p = cloud_uv->points[*pit];
         pcl::PointXYZRGB cp_rgb;
         cp_rgb.x = p.x; cp_rgb.y = p.y; cp_rgb.z = p.z;
         cp_rgb.rgb = p.rgb; 
-        cloud_cluster->points.push_back(cp_rgb); 
+        cloud_cluster->points.push_back(cp_rgb);
+
+        xmin = std::min(xmin, p.u);
+        xmax = std::max(xmax, p.u);
+        ymin = std::min(ymin, p.v);
+        ymax = std::max(ymax, p.v);
     }
     cloud_cluster->is_dense = true;
     cloud_cluster->width = cloud_cluster->points.size();
     cloud_cluster->height = 1;
 
     std::cout << "PointCloud representing the Cluster: " << cloud_cluster->points.size () << " data points." << std::endl;
-    pcd_filename = argv[1];
+    pcd_filename = argv[filenames[0]];
     std::stringstream ss;
     ss << "cluster_" << j++ << ".pcd";
     pcd_filename.replace(pcd_filename.length () - 4, ss.str().length(), ss.str());
     pcl::io::savePCDFile(pcd_filename, *cloud_cluster);
+
+    png::image<png::rgb_pixel> image(cloud_cluster->width, cloud_cluster->height);
+    int i = 0;
+    for (size_t y = 0; y < image.get_height (); ++y) {
+      for (size_t x = 0; x < image.get_width (); ++x) {
+        const PointType & p = cloud_cluster->points[i++];
+        image[y][x] = png::rgb_pixel(p.r, p.g, p.b);
+      }
+    }
+    pcd_filename.replace(pcd_filename.length () - 4, 4, ".png");
+    image.write(pcd_filename);
+
+    //crop out image patch
+    png::image<png::rgb_pixel> image_patch(xmax - xmin + 1, ymax - ymin + 1);
+    for (size_t y = 0; y < image_patch.get_height (); ++y) {
+      for (size_t x = 0; x < image_patch.get_width (); ++x) {
+        image_patch[y][x] = origin_image[y+ymin][x+xmin];
+      }
+    }
+    pcd_filename.replace(pcd_filename.length () - 4, 7, "box.png");
+    image_patch.write(pcd_filename);
 
     // writer.write<pcl::PointXYZRGB> (ss.str (), *cloud_cluster, false); //*
   }

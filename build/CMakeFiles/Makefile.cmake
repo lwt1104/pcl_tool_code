@@ -93,6 +93,7 @@ SET(CMAKE_MAKEFILE_PRODUCTS
 SET(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/alignment_prerejective.dir/DependInfo.cmake"
   "CMakeFiles/build_tree.dir/DependInfo.cmake"
+  "CMakeFiles/calculate_hist.dir/DependInfo.cmake"
   "CMakeFiles/cluster_seg.dir/DependInfo.cmake"
   "CMakeFiles/correspondence_grouping.dir/DependInfo.cmake"
   "CMakeFiles/get_vfh.dir/DependInfo.cmake"

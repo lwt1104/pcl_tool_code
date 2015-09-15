@@ -39,7 +39,7 @@ add_executable (alignment_prerejective alignment_prerejective.cpp)
 target_link_libraries (alignment_prerejective ${PCL_LIBRARIES})
 
 add_executable (plane_cluster_seg plane_cluster_seg.cpp)
-target_link_libraries (plane_cluster_seg ${PCL_LIBRARIES})
+target_link_libraries (plane_cluster_seg ${PCL_LIBRARIES} ${PNG_LIBRARY})
 
 add_executable (pcd2png pcd2png.cpp)
 target_link_libraries (pcd2png ${PCL_LIBRARIES} ${PNG_LIBRARY})
@@ -49,6 +49,9 @@ target_link_libraries(get_vfh ${PCL_LIBRARIES})
 
 add_executable(histogram_match histogram_match.cpp )
 target_link_libraries( histogram_match ${OpenCV_LIBS} )
+
+add_executable(calculate_hist calculate_hist.cpp )
+target_link_libraries( calculate_hist ${OpenCV_LIBS} )
 
 find_package(HDF5)
 if(HDF5_FOUND)

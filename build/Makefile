@@ -125,6 +125,19 @@ build_tree/fast:
 .PHONY : build_tree/fast
 
 #=============================================================================
+# Target rules for targets named calculate_hist
+
+# Build rule for target.
+calculate_hist: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 calculate_hist
+.PHONY : calculate_hist
+
+# fast build rule for target.
+calculate_hist/fast:
+	$(MAKE) -f CMakeFiles/calculate_hist.dir/build.make CMakeFiles/calculate_hist.dir/build
+.PHONY : calculate_hist/fast
+
+#=============================================================================
 # Target rules for targets named cluster_seg
 
 # Build rule for target.
@@ -327,6 +340,30 @@ build_tree.s: build_tree.cpp.s
 build_tree.cpp.s:
 	$(MAKE) -f CMakeFiles/build_tree.dir/build.make CMakeFiles/build_tree.dir/build_tree.cpp.s
 .PHONY : build_tree.cpp.s
+
+calculate_hist.o: calculate_hist.cpp.o
+.PHONY : calculate_hist.o
+
+# target to build an object file
+calculate_hist.cpp.o:
+	$(MAKE) -f CMakeFiles/calculate_hist.dir/build.make CMakeFiles/calculate_hist.dir/calculate_hist.cpp.o
+.PHONY : calculate_hist.cpp.o
+
+calculate_hist.i: calculate_hist.cpp.i
+.PHONY : calculate_hist.i
+
+# target to preprocess a source file
+calculate_hist.cpp.i:
+	$(MAKE) -f CMakeFiles/calculate_hist.dir/build.make CMakeFiles/calculate_hist.dir/calculate_hist.cpp.i
+.PHONY : calculate_hist.cpp.i
+
+calculate_hist.s: calculate_hist.cpp.s
+.PHONY : calculate_hist.s
+
+# target to generate assembly for a file
+calculate_hist.cpp.s:
+	$(MAKE) -f CMakeFiles/calculate_hist.dir/build.make CMakeFiles/calculate_hist.dir/calculate_hist.cpp.s
+.PHONY : calculate_hist.cpp.s
 
 cluster_seg.o: cluster_seg.cpp.o
 .PHONY : cluster_seg.o
@@ -624,6 +661,7 @@ help:
 	@echo "... depend"
 	@echo "... alignment_prerejective"
 	@echo "... build_tree"
+	@echo "... calculate_hist"
 	@echo "... cluster_seg"
 	@echo "... correspondence_grouping"
 	@echo "... edit_cache"
@@ -644,6 +682,9 @@ help:
 	@echo "... build_tree.o"
 	@echo "... build_tree.i"
 	@echo "... build_tree.s"
+	@echo "... calculate_hist.o"
+	@echo "... calculate_hist.i"
+	@echo "... calculate_hist.s"
 	@echo "... cluster_seg.o"
 	@echo "... cluster_seg.i"
 	@echo "... cluster_seg.s"
