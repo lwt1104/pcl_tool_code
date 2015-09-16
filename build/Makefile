@@ -164,6 +164,19 @@ correspondence_grouping/fast:
 .PHONY : correspondence_grouping/fast
 
 #=============================================================================
+# Target rules for targets named get_depth
+
+# Build rule for target.
+get_depth: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 get_depth
+.PHONY : get_depth
+
+# fast build rule for target.
+get_depth/fast:
+	$(MAKE) -f CMakeFiles/get_depth.dir/build.make CMakeFiles/get_depth.dir/build
+.PHONY : get_depth/fast
+
+#=============================================================================
 # Target rules for targets named get_vfh
 
 # Build rule for target.
@@ -412,6 +425,30 @@ correspondence_grouping.s: correspondence_grouping.cpp.s
 correspondence_grouping.cpp.s:
 	$(MAKE) -f CMakeFiles/correspondence_grouping.dir/build.make CMakeFiles/correspondence_grouping.dir/correspondence_grouping.cpp.s
 .PHONY : correspondence_grouping.cpp.s
+
+get_depth.o: get_depth.cpp.o
+.PHONY : get_depth.o
+
+# target to build an object file
+get_depth.cpp.o:
+	$(MAKE) -f CMakeFiles/get_depth.dir/build.make CMakeFiles/get_depth.dir/get_depth.cpp.o
+.PHONY : get_depth.cpp.o
+
+get_depth.i: get_depth.cpp.i
+.PHONY : get_depth.i
+
+# target to preprocess a source file
+get_depth.cpp.i:
+	$(MAKE) -f CMakeFiles/get_depth.dir/build.make CMakeFiles/get_depth.dir/get_depth.cpp.i
+.PHONY : get_depth.cpp.i
+
+get_depth.s: get_depth.cpp.s
+.PHONY : get_depth.s
+
+# target to generate assembly for a file
+get_depth.cpp.s:
+	$(MAKE) -f CMakeFiles/get_depth.dir/build.make CMakeFiles/get_depth.dir/get_depth.cpp.s
+.PHONY : get_depth.cpp.s
 
 get_vfh.o: get_vfh.cpp.o
 .PHONY : get_vfh.o
@@ -665,6 +702,7 @@ help:
 	@echo "... cluster_seg"
 	@echo "... correspondence_grouping"
 	@echo "... edit_cache"
+	@echo "... get_depth"
 	@echo "... get_vfh"
 	@echo "... global_hypothesis_verification"
 	@echo "... histogram_match"
@@ -691,6 +729,9 @@ help:
 	@echo "... correspondence_grouping.o"
 	@echo "... correspondence_grouping.i"
 	@echo "... correspondence_grouping.s"
+	@echo "... get_depth.o"
+	@echo "... get_depth.i"
+	@echo "... get_depth.s"
 	@echo "... get_vfh.o"
 	@echo "... get_vfh.i"
 	@echo "... get_vfh.s"

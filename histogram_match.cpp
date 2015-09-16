@@ -33,7 +33,7 @@ int main( int argc, char** argv )
   cvtColor( src_test1, hsv_test1, COLOR_BGR2HSV );
   hsv_half_down = hsv_base( Range( hsv_base.rows/2, hsv_base.rows - 1 ), Range( 0, hsv_base.cols - 1 ) );
 /// Using 50 bins for hue and 60 for saturation
-  int h_bins = 10; int s_bins = 10;
+  int h_bins = 5; int s_bins = 6;
   int histSize[] = { h_bins, s_bins };
 // hue varies from 0 to 179, saturation from 0 to 255
   float h_ranges[] = { 0, 180 };

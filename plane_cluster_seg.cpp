@@ -173,15 +173,15 @@ main (int argc, char** argv)
   ec.setInputCloud (cloud_uv);
   ec.extract (cluster_indices);
   
-  xmin = 1000;
-  xmax = 0; 
-  ymin = 1000;
-  ymax = 0;
 
   int j = 0;
   for (std::vector<pcl::PointIndices>::const_iterator it = cluster_indices.begin (); it != cluster_indices.end (); ++it)
   {
     pcl::PointCloud<pcl::PointXYZRGB>::Ptr cloud_cluster (new pcl::PointCloud<pcl::PointXYZRGB>);
+    xmin = 1000;
+    xmax = 0; 
+    ymin = 1000;
+    ymax = 0;
 
     for (std::vector<int>::const_iterator pit = it->indices.begin (); pit != it->indices.end (); ++pit) {
         PointXYZRGBUV& p = cloud_uv->points[*pit];

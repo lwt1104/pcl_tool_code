@@ -90,7 +90,7 @@ loadHist (const boost::filesystem::path &path, vfh_model &vfh)
   * \param distances the resultant neighbor distances
   */
 inline void
-nearestKSearch (flann::Index<flann::HellingerDistance<float> > &index, const vfh_model &model, 
+nearestKSearch (flann::Index<flann::ChiSquareDistance<float> > &index, const vfh_model &model, 
                 int k, flann::Matrix<int> &indices, flann::Matrix<float> &distances)
 {
   // Query point
@@ -195,8 +195,8 @@ main (int argc, char** argv)
   }
   else
   {
-    // flann::Index<flann::ChiSquareDistance<float> > index (data, flann::SavedIndexParams ("kdtree.idx"));
-    flann::Index<flann::HellingerDistance<float> > index (data, flann::SavedIndexParams ("kdtree.idx"));
+    flann::Index<flann::ChiSquareDistance<float> > index (data, flann::SavedIndexParams ("kdtree.idx"));
+    // flann::Index<flann::HellingerDistance<float> > index (data, flann::SavedIndexParams ("kdtree.idx"));
 
     index.buildIndex ();
     nearestKSearch (index, histogram, k, k_indices, k_distances);

@@ -53,6 +53,10 @@ target_link_libraries( histogram_match ${OpenCV_LIBS} )
 add_executable(calculate_hist calculate_hist.cpp )
 target_link_libraries( calculate_hist ${OpenCV_LIBS} )
 
+add_executable(get_depth get_depth.cpp )
+target_link_libraries(get_depth ${PCL_LIBRARIES} )
+
+
 find_package(HDF5)
 if(HDF5_FOUND)
 # find FLANN with pkg-config 

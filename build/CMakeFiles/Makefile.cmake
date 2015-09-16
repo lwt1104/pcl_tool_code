@@ -96,6 +96,7 @@ SET(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/calculate_hist.dir/DependInfo.cmake"
   "CMakeFiles/cluster_seg.dir/DependInfo.cmake"
   "CMakeFiles/correspondence_grouping.dir/DependInfo.cmake"
+  "CMakeFiles/get_depth.dir/DependInfo.cmake"
   "CMakeFiles/get_vfh.dir/DependInfo.cmake"
   "CMakeFiles/global_hypothesis_verification.dir/DependInfo.cmake"
   "CMakeFiles/histogram_match.dir/DependInfo.cmake"
