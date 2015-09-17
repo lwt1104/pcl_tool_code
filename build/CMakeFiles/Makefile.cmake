@@ -105,6 +105,7 @@ SET(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/pcd2png.dir/DependInfo.cmake"
   "CMakeFiles/pcd_recorder.dir/DependInfo.cmake"
   "CMakeFiles/plane_cluster_seg.dir/DependInfo.cmake"
+  "CMakeFiles/plane_cluster_seg2.dir/DependInfo.cmake"
   "CMakeFiles/print_point.dir/DependInfo.cmake"
   "CMakeFiles/remove_plane.dir/DependInfo.cmake"
   )

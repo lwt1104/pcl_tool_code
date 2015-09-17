@@ -281,6 +281,19 @@ plane_cluster_seg/fast:
 .PHONY : plane_cluster_seg/fast
 
 #=============================================================================
+# Target rules for targets named plane_cluster_seg2
+
+# Build rule for target.
+plane_cluster_seg2: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 plane_cluster_seg2
+.PHONY : plane_cluster_seg2
+
+# fast build rule for target.
+plane_cluster_seg2/fast:
+	$(MAKE) -f CMakeFiles/plane_cluster_seg2.dir/build.make CMakeFiles/plane_cluster_seg2.dir/build
+.PHONY : plane_cluster_seg2/fast
+
+#=============================================================================
 # Target rules for targets named print_point
 
 # Build rule for target.
@@ -666,6 +679,30 @@ plane_cluster_seg.cpp.s:
 	$(MAKE) -f CMakeFiles/plane_cluster_seg.dir/build.make CMakeFiles/plane_cluster_seg.dir/plane_cluster_seg.cpp.s
 .PHONY : plane_cluster_seg.cpp.s
 
+plane_cluster_seg2.o: plane_cluster_seg2.cpp.o
+.PHONY : plane_cluster_seg2.o
+
+# target to build an object file
+plane_cluster_seg2.cpp.o:
+	$(MAKE) -f CMakeFiles/plane_cluster_seg2.dir/build.make CMakeFiles/plane_cluster_seg2.dir/plane_cluster_seg2.cpp.o
+.PHONY : plane_cluster_seg2.cpp.o
+
+plane_cluster_seg2.i: plane_cluster_seg2.cpp.i
+.PHONY : plane_cluster_seg2.i
+
+# target to preprocess a source file
+plane_cluster_seg2.cpp.i:
+	$(MAKE) -f CMakeFiles/plane_cluster_seg2.dir/build.make CMakeFiles/plane_cluster_seg2.dir/plane_cluster_seg2.cpp.i
+.PHONY : plane_cluster_seg2.cpp.i
+
+plane_cluster_seg2.s: plane_cluster_seg2.cpp.s
+.PHONY : plane_cluster_seg2.s
+
+# target to generate assembly for a file
+plane_cluster_seg2.cpp.s:
+	$(MAKE) -f CMakeFiles/plane_cluster_seg2.dir/build.make CMakeFiles/plane_cluster_seg2.dir/plane_cluster_seg2.cpp.s
+.PHONY : plane_cluster_seg2.cpp.s
+
 print_point.o: print_point.cpp.o
 .PHONY : print_point.o
 
@@ -711,6 +748,7 @@ help:
 	@echo "... pcd2png"
 	@echo "... pcd_recorder"
 	@echo "... plane_cluster_seg"
+	@echo "... plane_cluster_seg2"
 	@echo "... print_point"
 	@echo "... rebuild_cache"
 	@echo "... remove_plane"
@@ -759,6 +797,9 @@ help:
 	@echo "... plane_cluster_seg.o"
 	@echo "... plane_cluster_seg.i"
 	@echo "... plane_cluster_seg.s"
+	@echo "... plane_cluster_seg2.o"
+	@echo "... plane_cluster_seg2.i"
+	@echo "... plane_cluster_seg2.s"
 	@echo "... print_point.o"
 	@echo "... print_point.i"
 	@echo "... print_point.s"

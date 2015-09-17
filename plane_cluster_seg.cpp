@@ -12,7 +12,7 @@
 #include <pcl/segmentation/extract_clusters.h>
 #include "png++/png.hpp"
 #include <pcl/console/parse.h>
-
+#include <pcl/filters/passthrough.h>
 
 struct _PointXYZRGBUV
 {
@@ -61,10 +61,26 @@ POINT_CLOUD_REGISTER_POINT_STRUCT (PointXYZRGBUV,           // here we assume a 
 
 typedef pcl::PointXYZRGB PointType;
 
+bool pass_through_filter(pcl::PointCloud<PointType>::Ptr cloud, float min_depth , float max_depth, float min_x, float max_x, float min_y, float max_y) {
+  // Create the filtering object
+  pcl::PointCloud<PointType>::Ptr cloud_filtered(new pcl::PointCloud<PointType>);
+  pcl::PassThrough<PointType> pass;
+  pass.setInputCloud (cloud);
+  pass.setFilterFieldName ("z");
+  pass.setFilterLimits (min_depth, max_depth);
+  //pass.setFilterLimitsNegative (true);
+  pass.filter (*cloud_filtered);  
+  *cloud = *cloud_filtered;
+  return true;
+}
 bool
-remove_plane(pcl::PointCloud<PointType>::Ptr cloud, float min_depth , float max_depth ) {
+remove_plane(pcl::PointCloud<PointType>::Ptr cloud, float min_depth , float max_depth, float min_x, float max_x, float min_y, float max_y) {
     for (size_t i = 0; i < cloud->size(); i++) {
       PointType &p = cloud->points[i];
+      if (!pcl::isFinite(p)) {
+        continue;
+      }
+
       if (p.z < min_depth || p.z > max_depth) {
         p.x = p.y = p.z = std::numeric_limits<float>::quiet_NaN ();
       }
@@ -138,13 +154,30 @@ main (int argc, char** argv)
   float max_depth = 3.0;
   pcl::console::parse_argument (argc, argv, "-max_depth", max_depth);
 
-  remove_plane(cloud, min_depth, max_depth);
+  float max_x = 1.0;
+  pcl::console::parse_argument (argc, argv, "-max_x", max_x);
+
+  float min_x = -1.0;
+  pcl::console::parse_argument (argc, argv, "-min_x", min_x);
+
+  float max_y = 1.0;
+  pcl::console::parse_argument (argc, argv, "-max_y", max_y);
+
+  float min_y = -1.0;
+  pcl::console::parse_argument (argc, argv, "-min_y", min_y);
+
+
+  int plane_seg_times = 1;
+  pcl::console::parse_argument (argc, argv, "-plane_seg_times", plane_seg_times);
+  for (int i = 0; i < plane_seg_times; i++) {
+    remove_plane(cloud, min_depth, max_depth, min_x, max_x, min_y, max_y);
+  }
 
   pcd_filename = argv[filenames[0]];
   pcd_filename.replace(pcd_filename.length () - 4, 8, "plane.pcd");
   pcl::io::savePCDFile(pcd_filename, *cloud);
 
-  std::cout << "PointCloud after removing the plane has: " << cloud->points.size () << " data points." << std::endl; //*
+  // std::cout << "PointCloud after removing the plane has: " << cloud->points.size () << " data points." << std::endl; //*
   uint32_t xmin = 1000, xmax = 0, ymin = 1000, ymax = 0;
 
   pcl::PointCloud<PointXYZRGBUV>::Ptr cloud_uv (new pcl::PointCloud<PointXYZRGBUV>);
@@ -167,7 +200,7 @@ main (int argc, char** argv)
   std::vector<pcl::PointIndices> cluster_indices;
   pcl::EuclideanClusterExtraction<PointXYZRGBUV> ec;
   ec.setClusterTolerance (0.02); // 2cm
-  ec.setMinClusterSize (800);
+  ec.setMinClusterSize (500);
   ec.setMaxClusterSize (25000);
   ec.setSearchMethod (tree);
   ec.setInputCloud (cloud_uv);

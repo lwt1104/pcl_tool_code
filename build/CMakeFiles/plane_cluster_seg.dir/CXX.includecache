@@ -33,6 +33,8 @@ png++/png.hpp
 /home/lwt1104/correspondence_grouping/png++/png.hpp
 pcl/console/parse.h
 -
+pcl/filters/passthrough.h
+-
 
 /home/lwt1104/correspondence_grouping/png++/color.hpp
 types.hpp
@@ -1832,12 +1834,24 @@ pcl/pcl_macros.h
 pcl/filters/filter_indices.h
 -
 
+/usr/include/pcl-1.7/pcl/filters/impl/passthrough.hpp
+pcl/filters/passthrough.h
+-
+pcl/common/io.h
+-
+
 /usr/include/pcl-1.7/pcl/filters/impl/voxel_grid.hpp
 pcl/common/common.h
 -
 pcl/common/io.h
 -
 pcl/filters/voxel_grid.h
+-
+
+/usr/include/pcl-1.7/pcl/filters/passthrough.h
+pcl/filters/filter_indices.h
+-
+pcl/filters/impl/passthrough.hpp
 -
 
 /usr/include/pcl-1.7/pcl/filters/voxel_grid.h

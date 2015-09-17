@@ -12,5 +12,6 @@
 /home/lwt1104/correspondence_grouping/build/CMakeFiles/pcd2png.dir
 /home/lwt1104/correspondence_grouping/build/CMakeFiles/pcd_recorder.dir
 /home/lwt1104/correspondence_grouping/build/CMakeFiles/plane_cluster_seg.dir
+/home/lwt1104/correspondence_grouping/build/CMakeFiles/plane_cluster_seg2.dir
 /home/lwt1104/correspondence_grouping/build/CMakeFiles/print_point.dir
 /home/lwt1104/correspondence_grouping/build/CMakeFiles/remove_plane.dir

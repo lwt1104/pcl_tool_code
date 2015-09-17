@@ -292,7 +292,9 @@ CMakeFiles/plane_cluster_seg.dir/plane_cluster_seg.cpp.o: /usr/include/pcl-1.7/p
 CMakeFiles/plane_cluster_seg.dir/plane_cluster_seg.cpp.o: /usr/include/pcl-1.7/pcl/filters/impl/extract_indices.hpp
 CMakeFiles/plane_cluster_seg.dir/plane_cluster_seg.cpp.o: /usr/include/pcl-1.7/pcl/filters/impl/filter.hpp
 CMakeFiles/plane_cluster_seg.dir/plane_cluster_seg.cpp.o: /usr/include/pcl-1.7/pcl/filters/impl/filter_indices.hpp
+CMakeFiles/plane_cluster_seg.dir/plane_cluster_seg.cpp.o: /usr/include/pcl-1.7/pcl/filters/impl/passthrough.hpp
 CMakeFiles/plane_cluster_seg.dir/plane_cluster_seg.cpp.o: /usr/include/pcl-1.7/pcl/filters/impl/voxel_grid.hpp
+CMakeFiles/plane_cluster_seg.dir/plane_cluster_seg.cpp.o: /usr/include/pcl-1.7/pcl/filters/passthrough.h
 CMakeFiles/plane_cluster_seg.dir/plane_cluster_seg.cpp.o: /usr/include/pcl-1.7/pcl/filters/voxel_grid.h
 CMakeFiles/plane_cluster_seg.dir/plane_cluster_seg.cpp.o: /usr/include/pcl-1.7/pcl/for_each_type.h
 CMakeFiles/plane_cluster_seg.dir/plane_cluster_seg.cpp.o: /usr/include/pcl-1.7/pcl/impl/cloud_iterator.hpp

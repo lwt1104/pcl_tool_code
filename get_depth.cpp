@@ -24,6 +24,8 @@ main(int argc, char** argv) {
       continue;
     }
     float zsum = 0;
+    float xsum = 0;
+    float ysum = 0;
     int num = 0;
     for (size_t i = 0; i < cloud->points.size(); i++) {
       PointType &p = cloud->points[i];
@@ -31,10 +33,13 @@ main(int argc, char** argv) {
         continue;
       }
       zsum += p.z;
+      xsum += p.x;
+      ysum += p.y;
       num++;
     }
 
-   std::cout << argv[filenames[index]] <<" average depth: " << zsum / num << std::endl;
+   std::cout << argv[filenames[index]] <<" average depth: " << zsum / num << "average x: " << 
+     xsum / num << "average y: " << ysum / num <<std::endl;
 
   }
 
