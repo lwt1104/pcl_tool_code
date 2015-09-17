@@ -55,7 +55,7 @@ loadHist (const boost::filesystem::path &path, vfh_model &vfh)
   cloud = cloud_filtered;
 
   pcl::NormalEstimationOMP<PointType, NormalType> norm_est;
-  norm_est.setKSearch (15);
+  norm_est.setKSearch (10);
   norm_est.setInputCloud (cloud);
   norm_est.compute (*cloud_normals);
 
@@ -124,6 +124,9 @@ main (int argc, char** argv)
   std::string kdtree_idx_file_name = "kdtree.idx";
   std::string training_data_h5_file_name = "training_data.h5";
   std::string training_data_list_file_name = "training_data.list";
+  std::ofstream ofs;
+  ofs.open(training_data_h5_file_name.c_str(), std::ofstream::out | std::ofstream::trunc);
+  ofs.close();
 
   std::vector<vfh_model> models;
 
@@ -159,4 +162,3 @@ main (int argc, char** argv)
 
   return (0);
 }
-

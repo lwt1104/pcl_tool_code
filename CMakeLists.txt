@@ -38,8 +38,8 @@ target_link_libraries (global_hypothesis_verification ${PCL_LIBRARIES})
 add_executable (alignment_prerejective alignment_prerejective.cpp)
 target_link_libraries (alignment_prerejective ${PCL_LIBRARIES})
 
-add_executable (plane_cluster_seg plane_cluster_seg.cpp)
-target_link_libraries (plane_cluster_seg ${PCL_LIBRARIES} ${PNG_LIBRARY})
+#add_executable (plane_cluster_seg plane_cluster_seg.cpp)
+#target_link_libraries (plane_cluster_seg ${PCL_LIBRARIES} ${PNG_LIBRARY})
 
 add_executable (plane_cluster_seg2 plane_cluster_seg2.cpp)
 target_link_libraries (plane_cluster_seg2 ${PCL_LIBRARIES} ${PNG_LIBRARY})

@@ -61,14 +61,14 @@ main (int argc, char **argv)
   scene = scene_filtered;
 
   // Downsample
-  pcl::console::print_highlight ("Downsampling...\n");
-  pcl::VoxelGrid<PointNT> grid;
-  const float leaf = 0.005f;
-  grid.setLeafSize (leaf, leaf, leaf);
-  grid.setInputCloud (object);
-  grid.filter (*object);
-  grid.setInputCloud (scene);
-  grid.filter (*scene);
+  // pcl::console::print_highlight ("Downsampling...\n");
+  // pcl::VoxelGrid<PointNT> grid;
+  // const float leaf = 0.005f;
+  // grid.setLeafSize (leaf, leaf, leaf);
+  // grid.setInputCloud (object);
+  // grid.filter (*object);
+  // grid.setInputCloud (scene);
+  // grid.filter (*scene);
   
   std::cout << "object size " << object->size() << std::endl;
   // Estimate normals for scene
@@ -100,7 +100,7 @@ main (int argc, char **argv)
   align.setNumberOfSamples (100); // Number of points to sample for generating/prerejecting a pose
   align.setCorrespondenceRandomness (5); // Number of nearest features to use
   align.setSimilarityThreshold (0.8f); // Polygonal edge length similarity threshold
-  align.setMaxCorrespondenceDistance (2.5f * leaf); // Inlier threshold
+  align.setMaxCorrespondenceDistance (0.0025f); // Inlier threshold
   align.setInlierFraction (0.15f); // Required inlier fraction for accepting a pose hypothesis
   {
     pcl::ScopeTime t("Alignment");

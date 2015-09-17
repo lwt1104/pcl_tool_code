@@ -53,7 +53,7 @@ main(int argc, char** argv) {
     //  Compute Normals
     //
     pcl::NormalEstimationOMP<PointType, NormalType> norm_est;
-    norm_est.setKSearch (15);
+    norm_est.setKSearch (10);
     norm_est.setInputCloud (cloud);
     norm_est.compute (*cloud_normals);
 
@@ -77,13 +77,14 @@ main(int argc, char** argv) {
     std::cout << "points number " << vfhs->points.size () << std::endl;// should be of size 1*
     std::cout << "points number " <<  pcl::VFHSignature308::descriptorSize() << std::endl;// should be of size 1*
     
-    std::string pcd_filename = argv[filenames[index]];
-    pcd_filename.replace(pcd_filename.length () - 4, 10, "_vfh_t.pcd");
-    pcl::io::savePCDFile(pcd_filename, *vfhs);
+    // std::string pcd_filename = argv[filenames[index]];
+    // pcd_filename.replace(pcd_filename.length () - 4, 10, "_vfh_t.pcd");
+    // pcl::io::savePCDFile(pcd_filename, *vfhs);
 
   
     pcl::visualization::PCLHistogramVisualizer hist; 
-    const std::string id="cloud"; 
+    // const std::string id = argv[filenames[index]]; 
+    const std::string id = "vfh_viewer"; 
     hist.addFeatureHistogram (*vfhs, 308, id, 600, 200); 
     hist.spin ();
   }

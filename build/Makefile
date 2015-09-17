@@ -268,19 +268,6 @@ pcd_recorder/fast:
 .PHONY : pcd_recorder/fast
 
 #=============================================================================
-# Target rules for targets named plane_cluster_seg
-
-# Build rule for target.
-plane_cluster_seg: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 plane_cluster_seg
-.PHONY : plane_cluster_seg
-
-# fast build rule for target.
-plane_cluster_seg/fast:
-	$(MAKE) -f CMakeFiles/plane_cluster_seg.dir/build.make CMakeFiles/plane_cluster_seg.dir/build
-.PHONY : plane_cluster_seg/fast
-
-#=============================================================================
 # Target rules for targets named plane_cluster_seg2
 
 # Build rule for target.
@@ -655,30 +642,6 @@ planar_seg.cpp.s:
 	$(MAKE) -f CMakeFiles/remove_plane.dir/build.make CMakeFiles/remove_plane.dir/planar_seg.cpp.s
 .PHONY : planar_seg.cpp.s
 
-plane_cluster_seg.o: plane_cluster_seg.cpp.o
-.PHONY : plane_cluster_seg.o
-
-# target to build an object file
-plane_cluster_seg.cpp.o:
-	$(MAKE) -f CMakeFiles/plane_cluster_seg.dir/build.make CMakeFiles/plane_cluster_seg.dir/plane_cluster_seg.cpp.o
-.PHONY : plane_cluster_seg.cpp.o
-
-plane_cluster_seg.i: plane_cluster_seg.cpp.i
-.PHONY : plane_cluster_seg.i
-
-# target to preprocess a source file
-plane_cluster_seg.cpp.i:
-	$(MAKE) -f CMakeFiles/plane_cluster_seg.dir/build.make CMakeFiles/plane_cluster_seg.dir/plane_cluster_seg.cpp.i
-.PHONY : plane_cluster_seg.cpp.i
-
-plane_cluster_seg.s: plane_cluster_seg.cpp.s
-.PHONY : plane_cluster_seg.s
-
-# target to generate assembly for a file
-plane_cluster_seg.cpp.s:
-	$(MAKE) -f CMakeFiles/plane_cluster_seg.dir/build.make CMakeFiles/plane_cluster_seg.dir/plane_cluster_seg.cpp.s
-.PHONY : plane_cluster_seg.cpp.s
-
 plane_cluster_seg2.o: plane_cluster_seg2.cpp.o
 .PHONY : plane_cluster_seg2.o
 
@@ -747,7 +710,6 @@ help:
 	@echo "... online_match"
 	@echo "... pcd2png"
 	@echo "... pcd_recorder"
-	@echo "... plane_cluster_seg"
 	@echo "... plane_cluster_seg2"
 	@echo "... print_point"
 	@echo "... rebuild_cache"
@@ -794,9 +756,6 @@ help:
 	@echo "... planar_seg.o"
 	@echo "... planar_seg.i"
 	@echo "... planar_seg.s"
-	@echo "... plane_cluster_seg.o"
-	@echo "... plane_cluster_seg.i"
-	@echo "... plane_cluster_seg.s"
 	@echo "... plane_cluster_seg2.o"
 	@echo "... plane_cluster_seg2.i"
 	@echo "... plane_cluster_seg2.s"

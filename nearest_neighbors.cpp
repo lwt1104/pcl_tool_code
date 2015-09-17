@@ -58,7 +58,7 @@ loadHist (const boost::filesystem::path &path, vfh_model &vfh)
   cloud = cloud_filtered;
 
   pcl::NormalEstimationOMP<PointType, NormalType> norm_est;
-  norm_est.setKSearch (15);
+  norm_est.setKSearch (10);
   norm_est.setInputCloud (cloud);
   norm_est.compute (*cloud_normals);
 
