@@ -209,7 +209,7 @@ main (int argc, char** argv)
 
   std::vector<pcl::PointIndices> cluster_indices;
   pcl::EuclideanClusterExtraction<PointXYZRGBUV> ec;
-  ec.setClusterTolerance (0.02); // 2cm
+  ec.setClusterTolerance (0.03); // 2cm
   ec.setMinClusterSize (500);
   ec.setMaxClusterSize (25000);
   ec.setSearchMethod (tree);
@@ -261,6 +261,7 @@ main (int argc, char** argv)
     image.write(pcd_filename);
 
     //crop out image patch
+
     png::image<png::rgb_pixel> image_patch(xmax - xmin + 1, ymax - ymin + 1);
     for (size_t y = 0; y < image_patch.get_height (); ++y) {
       for (size_t x = 0; x < image_patch.get_width (); ++x) {

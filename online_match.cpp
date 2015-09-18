@@ -409,7 +409,7 @@ class Consumer
     {
       stringstream ss;
       std::string time = boost::posix_time::to_iso_string (boost::posix_time::microsec_clock::local_time ());
-      ss << "frame-" << pcd_nb++ << ".pcd";
+      ss << prefix << pcd_nb++ << ".pcd";
       writer_.writeBinaryCompressed (ss.str (), *cloud);
       // FPS_CALC ("cloud write.", buf_);
     }
@@ -435,8 +435,9 @@ class Consumer
     }
 
   public:
-    Consumer (PCDBuffer<PointT> &buf)
-      : buf_ (buf)
+    Consumer (PCDBuffer<PointT> &buf, string prefix_str)
+      : buf_ (buf),
+        prefix(prefix_str)
     {
       thread_.reset (new boost::thread (boost::bind (&Consumer::receiveAndProcess, this)));
     }
@@ -458,6 +459,7 @@ class Consumer
     boost::shared_ptr<boost::thread> thread_;
     PCDWriter writer_;
     static int pcd_nb;
+    string prefix;
   };
 
 template <typename PointT>
@@ -547,23 +549,14 @@ main (int argc, char** argv)
     buf.setCapacity (buff_size);
     Producer<PointXYZRGBA> producer (buf, depth_mode);
     // boost::this_thread::sleep (boost::posix_time::seconds (2));
-    Consumer<PointXYZRGBA> consumer (buf);
+    string prefix = "frame";
+    pcl::console::parse_argument (argc, argv, "-name", prefix);
+
+    Consumer<PointXYZRGBA> consumer (buf, prefix);
     // consumer.pcd_nb() = 0;
 
     producer.stop ();
     consumer.stop ();
-  } else {
-    print_highlight ("PointXYZ enabled.\n");
-    PCDBuffer<PointXYZ> buf;
-    buf.setCapacity (buff_size);
-    Producer<PointXYZ> producer (buf, depth_mode);
-    boost::this_thread::sleep (boost::posix_time::seconds (2));
-    Consumer<PointXYZ> consumer (buf);
-
-    producer.stop ();
-    consumer.stop ();
-
-
   }
   return (0);
 }
