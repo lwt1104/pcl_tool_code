@@ -42,13 +42,13 @@ main(int argc, char** argv) {
       continue;
     }
     //
-    std::cout << "object density " << cloud->is_dense << std::endl;
+    std::cout << "object density " << cloud->is_dense << " # of points: " << cloud->points.size() << ". ";
     pcl::PointCloud<PointType>::Ptr cloud_filtered (new pcl::PointCloud<PointType>);
     std::vector<int> filter_index;
     pcl::removeNaNFromPointCloud (*cloud, *cloud_filtered, filter_index);
     cloud = cloud_filtered;
 
-
+    std::cout << " # of points after removing NAN: " << cloud->points.size() << std::endl;
     //
     //  Compute Normals
     //
