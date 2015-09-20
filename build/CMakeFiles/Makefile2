@@ -613,6 +613,41 @@ clean: CMakeFiles/remove_plane.dir/clean
 .PHONY : clean
 
 #=============================================================================
+# Target rules for target CMakeFiles/sort_by_distance.dir
+
+# All Build rule for target.
+CMakeFiles/sort_by_distance.dir/all:
+	$(MAKE) -f CMakeFiles/sort_by_distance.dir/build.make CMakeFiles/sort_by_distance.dir/depend
+	$(MAKE) -f CMakeFiles/sort_by_distance.dir/build.make CMakeFiles/sort_by_distance.dir/build
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/lwt1104/correspondence_grouping/build/CMakeFiles  17
+	@echo "Built target sort_by_distance"
+.PHONY : CMakeFiles/sort_by_distance.dir/all
+
+# Include target in all.
+all: CMakeFiles/sort_by_distance.dir/all
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/sort_by_distance.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lwt1104/correspondence_grouping/build/CMakeFiles 1
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/sort_by_distance.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lwt1104/correspondence_grouping/build/CMakeFiles 0
+.PHONY : CMakeFiles/sort_by_distance.dir/rule
+
+# Convenience name for target.
+sort_by_distance: CMakeFiles/sort_by_distance.dir/rule
+.PHONY : sort_by_distance
+
+# clean rule for target.
+CMakeFiles/sort_by_distance.dir/clean:
+	$(MAKE) -f CMakeFiles/sort_by_distance.dir/build.make CMakeFiles/sort_by_distance.dir/clean
+.PHONY : CMakeFiles/sort_by_distance.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/sort_by_distance.dir/clean
+.PHONY : clean
+
+#=============================================================================
 # Special targets to cleanup operation of make.
 
 # Special rule to run CMake to check the build system integrity.

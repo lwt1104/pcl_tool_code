@@ -306,6 +306,19 @@ remove_plane/fast:
 	$(MAKE) -f CMakeFiles/remove_plane.dir/build.make CMakeFiles/remove_plane.dir/build
 .PHONY : remove_plane/fast
 
+#=============================================================================
+# Target rules for targets named sort_by_distance
+
+# Build rule for target.
+sort_by_distance: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 sort_by_distance
+.PHONY : sort_by_distance
+
+# fast build rule for target.
+sort_by_distance/fast:
+	$(MAKE) -f CMakeFiles/sort_by_distance.dir/build.make CMakeFiles/sort_by_distance.dir/build
+.PHONY : sort_by_distance/fast
+
 alignment_prerejective.o: alignment_prerejective.cpp.o
 .PHONY : alignment_prerejective.o
 
@@ -690,6 +703,30 @@ print_point.cpp.s:
 	$(MAKE) -f CMakeFiles/print_point.dir/build.make CMakeFiles/print_point.dir/print_point.cpp.s
 .PHONY : print_point.cpp.s
 
+sort_by_distance.o: sort_by_distance.cpp.o
+.PHONY : sort_by_distance.o
+
+# target to build an object file
+sort_by_distance.cpp.o:
+	$(MAKE) -f CMakeFiles/sort_by_distance.dir/build.make CMakeFiles/sort_by_distance.dir/sort_by_distance.cpp.o
+.PHONY : sort_by_distance.cpp.o
+
+sort_by_distance.i: sort_by_distance.cpp.i
+.PHONY : sort_by_distance.i
+
+# target to preprocess a source file
+sort_by_distance.cpp.i:
+	$(MAKE) -f CMakeFiles/sort_by_distance.dir/build.make CMakeFiles/sort_by_distance.dir/sort_by_distance.cpp.i
+.PHONY : sort_by_distance.cpp.i
+
+sort_by_distance.s: sort_by_distance.cpp.s
+.PHONY : sort_by_distance.s
+
+# target to generate assembly for a file
+sort_by_distance.cpp.s:
+	$(MAKE) -f CMakeFiles/sort_by_distance.dir/build.make CMakeFiles/sort_by_distance.dir/sort_by_distance.cpp.s
+.PHONY : sort_by_distance.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -714,6 +751,7 @@ help:
 	@echo "... print_point"
 	@echo "... rebuild_cache"
 	@echo "... remove_plane"
+	@echo "... sort_by_distance"
 	@echo "... alignment_prerejective.o"
 	@echo "... alignment_prerejective.i"
 	@echo "... alignment_prerejective.s"
@@ -762,6 +800,9 @@ help:
 	@echo "... print_point.o"
 	@echo "... print_point.i"
 	@echo "... print_point.s"
+	@echo "... sort_by_distance.o"
+	@echo "... sort_by_distance.i"
+	@echo "... sort_by_distance.s"
 .PHONY : help
 
 

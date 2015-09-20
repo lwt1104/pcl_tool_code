@@ -3,34 +3,6 @@
 
 CMakeFiles/cluster_seg.dir/cluster_seg.cpp.o
  /home/lwt1104/correspondence_grouping/cluster_seg.cpp
- /home/lwt1104/correspondence_grouping/png++/color.hpp
- /home/lwt1104/correspondence_grouping/png++/config.hpp
- /home/lwt1104/correspondence_grouping/png++/consumer.hpp
- /home/lwt1104/correspondence_grouping/png++/convert_color_space.hpp
- /home/lwt1104/correspondence_grouping/png++/end_info.hpp
- /home/lwt1104/correspondence_grouping/png++/error.hpp
- /home/lwt1104/correspondence_grouping/png++/ga_pixel.hpp
- /home/lwt1104/correspondence_grouping/png++/generator.hpp
- /home/lwt1104/correspondence_grouping/png++/gray_pixel.hpp
- /home/lwt1104/correspondence_grouping/png++/image.hpp
- /home/lwt1104/correspondence_grouping/png++/image_info.hpp
- /home/lwt1104/correspondence_grouping/png++/index_pixel.hpp
- /home/lwt1104/correspondence_grouping/png++/info.hpp
- /home/lwt1104/correspondence_grouping/png++/info_base.hpp
- /home/lwt1104/correspondence_grouping/png++/io_base.hpp
- /home/lwt1104/correspondence_grouping/png++/packed_pixel.hpp
- /home/lwt1104/correspondence_grouping/png++/palette.hpp
- /home/lwt1104/correspondence_grouping/png++/pixel_buffer.hpp
- /home/lwt1104/correspondence_grouping/png++/pixel_traits.hpp
- /home/lwt1104/correspondence_grouping/png++/png.hpp
- /home/lwt1104/correspondence_grouping/png++/reader.hpp
- /home/lwt1104/correspondence_grouping/png++/require_color_space.hpp
- /home/lwt1104/correspondence_grouping/png++/rgb_pixel.hpp
- /home/lwt1104/correspondence_grouping/png++/rgba_pixel.hpp
- /home/lwt1104/correspondence_grouping/png++/streaming_base.hpp
- /home/lwt1104/correspondence_grouping/png++/tRNS.hpp
- /home/lwt1104/correspondence_grouping/png++/types.hpp
- /home/lwt1104/correspondence_grouping/png++/writer.hpp
  /usr/include/eigen3/Eigen/Cholesky
  /usr/include/eigen3/Eigen/Core
  /usr/include/eigen3/Eigen/Dense

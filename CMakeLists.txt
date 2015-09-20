@@ -59,6 +59,8 @@ target_link_libraries( calculate_hist ${OpenCV_LIBS} )
 add_executable(get_depth get_depth.cpp )
 target_link_libraries(get_depth ${PCL_LIBRARIES} )
 
+add_executable(sort_by_distance sort_by_distance.cpp)
+target_link_libraries(sort_by_distance ${PCL_LIBRARIES} ${Boost_LIBRARIES})
 
 find_package(HDF5)
 if(HDF5_FOUND)
