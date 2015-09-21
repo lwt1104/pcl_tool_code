@@ -1,4 +1,5 @@
 /home/lwt1104/correspondence_grouping/build/CMakeFiles/alignment_prerejective.dir
+/home/lwt1104/correspondence_grouping/build/CMakeFiles/batch_viewer.dir
 /home/lwt1104/correspondence_grouping/build/CMakeFiles/build_tree.dir
 /home/lwt1104/correspondence_grouping/build/CMakeFiles/calculate_hist.dir
 /home/lwt1104/correspondence_grouping/build/CMakeFiles/cluster_seg.dir

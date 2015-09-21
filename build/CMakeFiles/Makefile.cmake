@@ -92,6 +92,7 @@ SET(CMAKE_MAKEFILE_PRODUCTS
 # Dependency information for all targets:
 SET(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/alignment_prerejective.dir/DependInfo.cmake"
+  "CMakeFiles/batch_viewer.dir/DependInfo.cmake"
   "CMakeFiles/build_tree.dir/DependInfo.cmake"
   "CMakeFiles/calculate_hist.dir/DependInfo.cmake"
   "CMakeFiles/cluster_seg.dir/DependInfo.cmake"

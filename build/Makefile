@@ -112,6 +112,19 @@ alignment_prerejective/fast:
 .PHONY : alignment_prerejective/fast
 
 #=============================================================================
+# Target rules for targets named batch_viewer
+
+# Build rule for target.
+batch_viewer: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 batch_viewer
+.PHONY : batch_viewer
+
+# fast build rule for target.
+batch_viewer/fast:
+	$(MAKE) -f CMakeFiles/batch_viewer.dir/build.make CMakeFiles/batch_viewer.dir/build
+.PHONY : batch_viewer/fast
+
+#=============================================================================
 # Target rules for targets named build_tree
 
 # Build rule for target.
@@ -342,6 +355,30 @@ alignment_prerejective.s: alignment_prerejective.cpp.s
 alignment_prerejective.cpp.s:
 	$(MAKE) -f CMakeFiles/alignment_prerejective.dir/build.make CMakeFiles/alignment_prerejective.dir/alignment_prerejective.cpp.s
 .PHONY : alignment_prerejective.cpp.s
+
+batch_viewer.o: batch_viewer.cpp.o
+.PHONY : batch_viewer.o
+
+# target to build an object file
+batch_viewer.cpp.o:
+	$(MAKE) -f CMakeFiles/batch_viewer.dir/build.make CMakeFiles/batch_viewer.dir/batch_viewer.cpp.o
+.PHONY : batch_viewer.cpp.o
+
+batch_viewer.i: batch_viewer.cpp.i
+.PHONY : batch_viewer.i
+
+# target to preprocess a source file
+batch_viewer.cpp.i:
+	$(MAKE) -f CMakeFiles/batch_viewer.dir/build.make CMakeFiles/batch_viewer.dir/batch_viewer.cpp.i
+.PHONY : batch_viewer.cpp.i
+
+batch_viewer.s: batch_viewer.cpp.s
+.PHONY : batch_viewer.s
+
+# target to generate assembly for a file
+batch_viewer.cpp.s:
+	$(MAKE) -f CMakeFiles/batch_viewer.dir/build.make CMakeFiles/batch_viewer.dir/batch_viewer.cpp.s
+.PHONY : batch_viewer.cpp.s
 
 build_tree.o: build_tree.cpp.o
 .PHONY : build_tree.o
@@ -734,6 +771,7 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... alignment_prerejective"
+	@echo "... batch_viewer"
 	@echo "... build_tree"
 	@echo "... calculate_hist"
 	@echo "... cluster_seg"
@@ -755,6 +793,9 @@ help:
 	@echo "... alignment_prerejective.o"
 	@echo "... alignment_prerejective.i"
 	@echo "... alignment_prerejective.s"
+	@echo "... batch_viewer.o"
+	@echo "... batch_viewer.i"
+	@echo "... batch_viewer.s"
 	@echo "... build_tree.o"
 	@echo "... build_tree.i"
 	@echo "... build_tree.s"

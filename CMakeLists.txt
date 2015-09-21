@@ -62,6 +62,9 @@ target_link_libraries(get_depth ${PCL_LIBRARIES} )
 add_executable(sort_by_distance sort_by_distance.cpp)
 target_link_libraries(sort_by_distance ${PCL_LIBRARIES} ${Boost_LIBRARIES})
 
+add_executable(batch_viewer batch_viewer.cpp)
+target_link_libraries(batch_viewer ${PCL_LIBRARIES})
+
 find_package(HDF5)
 if(HDF5_FOUND)
 # find FLANN with pkg-config 
