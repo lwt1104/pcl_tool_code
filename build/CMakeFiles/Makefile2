@@ -683,6 +683,41 @@ clean: CMakeFiles/sort_by_distance.dir/clean
 .PHONY : clean
 
 #=============================================================================
+# Target rules for target CMakeFiles/vfh_accuracy.dir
+
+# All Build rule for target.
+CMakeFiles/vfh_accuracy.dir/all:
+	$(MAKE) -f CMakeFiles/vfh_accuracy.dir/build.make CMakeFiles/vfh_accuracy.dir/depend
+	$(MAKE) -f CMakeFiles/vfh_accuracy.dir/build.make CMakeFiles/vfh_accuracy.dir/build
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/lwt1104/correspondence_grouping/build/CMakeFiles  19
+	@echo "Built target vfh_accuracy"
+.PHONY : CMakeFiles/vfh_accuracy.dir/all
+
+# Include target in all.
+all: CMakeFiles/vfh_accuracy.dir/all
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/vfh_accuracy.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lwt1104/correspondence_grouping/build/CMakeFiles 1
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/vfh_accuracy.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lwt1104/correspondence_grouping/build/CMakeFiles 0
+.PHONY : CMakeFiles/vfh_accuracy.dir/rule
+
+# Convenience name for target.
+vfh_accuracy: CMakeFiles/vfh_accuracy.dir/rule
+.PHONY : vfh_accuracy
+
+# clean rule for target.
+CMakeFiles/vfh_accuracy.dir/clean:
+	$(MAKE) -f CMakeFiles/vfh_accuracy.dir/build.make CMakeFiles/vfh_accuracy.dir/clean
+.PHONY : CMakeFiles/vfh_accuracy.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/vfh_accuracy.dir/clean
+.PHONY : clean
+
+#=============================================================================
 # Special targets to cleanup operation of make.
 
 # Special rule to run CMake to check the build system integrity.

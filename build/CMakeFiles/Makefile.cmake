@@ -109,4 +109,5 @@ SET(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/print_point.dir/DependInfo.cmake"
   "CMakeFiles/remove_plane.dir/DependInfo.cmake"
   "CMakeFiles/sort_by_distance.dir/DependInfo.cmake"
+  "CMakeFiles/vfh_accuracy.dir/DependInfo.cmake"
   )

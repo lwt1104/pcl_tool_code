@@ -332,6 +332,19 @@ sort_by_distance/fast:
 	$(MAKE) -f CMakeFiles/sort_by_distance.dir/build.make CMakeFiles/sort_by_distance.dir/build
 .PHONY : sort_by_distance/fast
 
+#=============================================================================
+# Target rules for targets named vfh_accuracy
+
+# Build rule for target.
+vfh_accuracy: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 vfh_accuracy
+.PHONY : vfh_accuracy
+
+# fast build rule for target.
+vfh_accuracy/fast:
+	$(MAKE) -f CMakeFiles/vfh_accuracy.dir/build.make CMakeFiles/vfh_accuracy.dir/build
+.PHONY : vfh_accuracy/fast
+
 alignment_prerejective.o: alignment_prerejective.cpp.o
 .PHONY : alignment_prerejective.o
 
@@ -764,6 +777,30 @@ sort_by_distance.cpp.s:
 	$(MAKE) -f CMakeFiles/sort_by_distance.dir/build.make CMakeFiles/sort_by_distance.dir/sort_by_distance.cpp.s
 .PHONY : sort_by_distance.cpp.s
 
+vfh_accuracy.o: vfh_accuracy.cpp.o
+.PHONY : vfh_accuracy.o
+
+# target to build an object file
+vfh_accuracy.cpp.o:
+	$(MAKE) -f CMakeFiles/vfh_accuracy.dir/build.make CMakeFiles/vfh_accuracy.dir/vfh_accuracy.cpp.o
+.PHONY : vfh_accuracy.cpp.o
+
+vfh_accuracy.i: vfh_accuracy.cpp.i
+.PHONY : vfh_accuracy.i
+
+# target to preprocess a source file
+vfh_accuracy.cpp.i:
+	$(MAKE) -f CMakeFiles/vfh_accuracy.dir/build.make CMakeFiles/vfh_accuracy.dir/vfh_accuracy.cpp.i
+.PHONY : vfh_accuracy.cpp.i
+
+vfh_accuracy.s: vfh_accuracy.cpp.s
+.PHONY : vfh_accuracy.s
+
+# target to generate assembly for a file
+vfh_accuracy.cpp.s:
+	$(MAKE) -f CMakeFiles/vfh_accuracy.dir/build.make CMakeFiles/vfh_accuracy.dir/vfh_accuracy.cpp.s
+.PHONY : vfh_accuracy.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -790,6 +827,7 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... remove_plane"
 	@echo "... sort_by_distance"
+	@echo "... vfh_accuracy"
 	@echo "... alignment_prerejective.o"
 	@echo "... alignment_prerejective.i"
 	@echo "... alignment_prerejective.s"
@@ -844,6 +882,9 @@ help:
 	@echo "... sort_by_distance.o"
 	@echo "... sort_by_distance.i"
 	@echo "... sort_by_distance.s"
+	@echo "... vfh_accuracy.o"
+	@echo "... vfh_accuracy.i"
+	@echo "... vfh_accuracy.s"
 .PHONY : help
 
 

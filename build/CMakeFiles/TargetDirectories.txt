@@ -16,3 +16,4 @@
 /home/lwt1104/correspondence_grouping/build/CMakeFiles/print_point.dir
 /home/lwt1104/correspondence_grouping/build/CMakeFiles/remove_plane.dir
 /home/lwt1104/correspondence_grouping/build/CMakeFiles/sort_by_distance.dir
+/home/lwt1104/correspondence_grouping/build/CMakeFiles/vfh_accuracy.dir

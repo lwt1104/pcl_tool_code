@@ -87,7 +87,10 @@ if(HDF5_FOUND)
 
   add_executable(nearest_neighbors nearest_neighbors.cpp)
   target_link_libraries(nearest_neighbors ${PCL_LIBRARIES} 
-                                        ${Boost_LIBRARIES} ${FLANN_LIBRARIES} ${HDF5_hdf5_LIBRARY} 
-                                        )
+                                        ${Boost_LIBRARIES} ${FLANN_LIBRARIES} ${HDF5_hdf5_LIBRARY})
+  add_executable(vfh_accuracy vfh_accuracy.cpp)
+  target_link_libraries(vfh_accuracy ${PCL_LIBRARIES} 
+                                        ${Boost_LIBRARIES} ${FLANN_LIBRARIES} ${HDF5_hdf5_LIBRARY})
+
 endif(HDF5_FOUND)
 
