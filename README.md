@@ -9,4 +9,7 @@
 
 ./nearest_neighbors ../cup_model1.pcd -k 1 -thresh 50
 
-./plane_cluster_seg frame-1.pcd -min_depth 0.3 -max_depth 2.0
+
+./plane_cluster_seg2 -min_z 0.6 -max_z 2 -min_y -0.2 -max_y 0.3 -k 1 paper_cupbrightB11.pcd 
+
+./plane_cluster_seg2 -min_z 0.8 -max_z 2.5 -min_y -0.4 -max_y 0.3 -max_x 0.2 -min_x -0.3 -k 1 paper_cupbrightC6.pcd

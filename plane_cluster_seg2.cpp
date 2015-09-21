@@ -176,6 +176,8 @@ main (int argc, char** argv)
   float min_y = -3.0;
   pcl::console::parse_argument (argc, argv, "-min_y", min_y);
 
+  int k = 10;
+  pcl::console::parse_argument (argc, argv, "-k", k);
 
   pcl::PointCloud<PointXYZRGBUV>::Ptr cloud_uv (new pcl::PointCloud<PointXYZRGBUV>);
   for (size_t index = 0; index < cloud->points.size(); index++) {
@@ -210,7 +212,7 @@ main (int argc, char** argv)
   std::vector<pcl::PointIndices> cluster_indices;
   pcl::EuclideanClusterExtraction<PointXYZRGBUV> ec;
   ec.setClusterTolerance (0.035); // 2cm
-  ec.setMinClusterSize (700);
+  ec.setMinClusterSize (600);
   ec.setMaxClusterSize (25000);
   ec.setSearchMethod (tree);
   ec.setInputCloud (cloud_uv);
@@ -220,6 +222,9 @@ main (int argc, char** argv)
   int j = 0;
   for (std::vector<pcl::PointIndices>::const_iterator it = cluster_indices.begin (); it != cluster_indices.end (); ++it)
   {
+    if (j >= k) {
+      continue;
+    }
     pcl::PointCloud<pcl::PointXYZRGB>::Ptr cloud_cluster (new pcl::PointCloud<pcl::PointXYZRGB>);
     xmin = 1000;
     xmax = 0; 
