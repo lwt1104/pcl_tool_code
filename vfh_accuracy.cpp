@@ -148,7 +148,7 @@ void testModel(const boost::filesystem::path &base_dir, const std::string &exten
     if (k_distances[0][0] < thresh) {
       detect++;
     }
-    pcl::console::print_info ("  with a distance of: %f\n", k_distances[0][0]);
+    pcl::console::print_info ("%s  with a distance of: %f\n", it->path().filename().c_str(), k_distances[0][0]);
   }
   pcl::console::print_info ("%d postive of total %d, rate: %f\n", detect, num, (float)(detect) / num);
 
