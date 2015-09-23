@@ -91,6 +91,8 @@ if(HDF5_FOUND)
   add_executable(vfh_accuracy vfh_accuracy.cpp)
   target_link_libraries(vfh_accuracy ${PCL_LIBRARIES} 
                                         ${Boost_LIBRARIES} ${FLANN_LIBRARIES} ${HDF5_hdf5_LIBRARY})
-
+  add_executable(flann_template_match_vfh flann_template_match_vfh.cpp)
+  target_link_libraries(flann_template_match_vfh ${PCL_LIBRARIES} 
+                                        ${Boost_LIBRARIES} ${FLANN_LIBRARIES} ${HDF5_hdf5_LIBRARY})
 endif(HDF5_FOUND)
 

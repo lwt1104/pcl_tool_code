@@ -125,7 +125,7 @@ nearestKSearch (const flann::Index<flann::ChiSquareDistance<float> > &index, con
   delete[] p.ptr ();
 }
 
-void testModel(const boost::filesystem::path &base_dir, const std::string &extension,
+void testModel(const boost::filesystem::path &base_dir, const std::string &extension, std::vector<vfh_model> &models,
                const flann::Index<flann::ChiSquareDistance<float> >& index, int k, double thresh) {
   if (!boost::filesystem::exists (base_dir) && !boost::filesystem::is_directory (base_dir))
     return;
@@ -148,7 +148,8 @@ void testModel(const boost::filesystem::path &base_dir, const std::string &exten
     if (k_distances[0][0] < thresh) {
       detect++;
     }
-    pcl::console::print_info ("%s  with a distance of: %f\n", it->path().filename().c_str(), k_distances[0][0]);
+    pcl::console::print_info ("object %s  match %s a distance of: %f\n", 
+      it->path().filename().c_str(), models.at (k_indices[0][0]).first.c_str (), k_distances[0][0]);
   }
   pcl::console::print_info ("%d postive of total %d, rate: %f\n", detect, num, (float)(detect) / num);
 
@@ -193,7 +194,7 @@ main (int argc, char** argv)
   //flann::Index<flann::ChiSquareDistance<float> > index (data, flann::KDTreeIndexParams (4));
   index.buildIndex ();
 
-  testModel(argv[2], extension, index, k, thresh);
+  testModel(argv[2], extension, models, index, k, thresh);
 
 
   delete[] data.ptr ();

@@ -177,6 +177,19 @@ correspondence_grouping/fast:
 .PHONY : correspondence_grouping/fast
 
 #=============================================================================
+# Target rules for targets named flann_template_match_vfh
+
+# Build rule for target.
+flann_template_match_vfh: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 flann_template_match_vfh
+.PHONY : flann_template_match_vfh
+
+# fast build rule for target.
+flann_template_match_vfh/fast:
+	$(MAKE) -f CMakeFiles/flann_template_match_vfh.dir/build.make CMakeFiles/flann_template_match_vfh.dir/build
+.PHONY : flann_template_match_vfh/fast
+
+#=============================================================================
 # Target rules for targets named get_depth
 
 # Build rule for target.
@@ -488,6 +501,30 @@ correspondence_grouping.s: correspondence_grouping.cpp.s
 correspondence_grouping.cpp.s:
 	$(MAKE) -f CMakeFiles/correspondence_grouping.dir/build.make CMakeFiles/correspondence_grouping.dir/correspondence_grouping.cpp.s
 .PHONY : correspondence_grouping.cpp.s
+
+flann_template_match_vfh.o: flann_template_match_vfh.cpp.o
+.PHONY : flann_template_match_vfh.o
+
+# target to build an object file
+flann_template_match_vfh.cpp.o:
+	$(MAKE) -f CMakeFiles/flann_template_match_vfh.dir/build.make CMakeFiles/flann_template_match_vfh.dir/flann_template_match_vfh.cpp.o
+.PHONY : flann_template_match_vfh.cpp.o
+
+flann_template_match_vfh.i: flann_template_match_vfh.cpp.i
+.PHONY : flann_template_match_vfh.i
+
+# target to preprocess a source file
+flann_template_match_vfh.cpp.i:
+	$(MAKE) -f CMakeFiles/flann_template_match_vfh.dir/build.make CMakeFiles/flann_template_match_vfh.dir/flann_template_match_vfh.cpp.i
+.PHONY : flann_template_match_vfh.cpp.i
+
+flann_template_match_vfh.s: flann_template_match_vfh.cpp.s
+.PHONY : flann_template_match_vfh.s
+
+# target to generate assembly for a file
+flann_template_match_vfh.cpp.s:
+	$(MAKE) -f CMakeFiles/flann_template_match_vfh.dir/build.make CMakeFiles/flann_template_match_vfh.dir/flann_template_match_vfh.cpp.s
+.PHONY : flann_template_match_vfh.cpp.s
 
 get_depth.o: get_depth.cpp.o
 .PHONY : get_depth.o
@@ -814,6 +851,7 @@ help:
 	@echo "... cluster_seg"
 	@echo "... correspondence_grouping"
 	@echo "... edit_cache"
+	@echo "... flann_template_match_vfh"
 	@echo "... get_depth"
 	@echo "... get_vfh"
 	@echo "... global_hypothesis_verification"
@@ -846,6 +884,9 @@ help:
 	@echo "... correspondence_grouping.o"
 	@echo "... correspondence_grouping.i"
 	@echo "... correspondence_grouping.s"
+	@echo "... flann_template_match_vfh.o"
+	@echo "... flann_template_match_vfh.i"
+	@echo "... flann_template_match_vfh.s"
 	@echo "... get_depth.o"
 	@echo "... get_depth.i"
 	@echo "... get_depth.s"

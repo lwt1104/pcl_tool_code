@@ -8,6 +8,8 @@
 #include <pcl/features/normal_3d_omp.h>
 #include <pcl/filters/filter.h>
 #include <pcl/visualization/histogram_visualizer.h>
+#include <math.h>  
+
 
 typedef pcl::PointXYZRGB PointType;
 typedef pcl::Normal NormalType;
@@ -37,9 +39,11 @@ main(int argc, char** argv) {
       ysum += p.y;
       num++;
     }
-
-   std::cout << argv[filenames[index]] <<" average depth: " << zsum / num << "average x: " << 
-     xsum / num << "average y: " << ysum / num <<std::endl;
+    
+   float zavg = zsum / num, yavg = ysum / num, xavg = xsum /num;
+   float distance = sqrt(zavg * zavg + xavg * xavg + yavg * yavg);
+   std::cout << argv[filenames[index]] << "   x: " << xsum / num << "   y: " << ysum / num 
+        << "   z: " << zsum / num << "   distance: " << distance << std::endl;
 
   }
 
